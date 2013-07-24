@@ -18,5 +18,6 @@ class Category(CommonInfo):
 
 
 class Sample(CommonInfo):
+    model_filename = models.CharField(max_length=1000)
     parent = models.ForeignKey(Category, blank=True, null=True,
                                on_delete=models.SET_NULL)
