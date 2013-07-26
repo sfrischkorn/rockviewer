@@ -14,9 +14,11 @@ class CommonInfo(models.Model):
 
 class Category(CommonInfo):
     parent = models.ForeignKey('self', blank=True, null=True,
-                               on_delete=models.SET_NULL)
+                               on_delete=models.SET_NULL,
+                               related_name='children')
 
 
 class Sample(CommonInfo):
+    model_filename = models.CharField(max_length=1000)
     parent = models.ForeignKey(Category, blank=True, null=True,
                                on_delete=models.SET_NULL)

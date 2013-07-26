@@ -156,3 +156,11 @@ LOGGING = {
         },
     }
 }
+
+
+# Custom config settings
+MODEL_DIRS = (
+    # put model directories here, separated by commas. If there are
+    # models with the same name under different directories, the first
+    # directory will be used
+)
