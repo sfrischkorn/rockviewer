@@ -13,5 +13,6 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
+    url(r'', include('three_d_viewer.urls', namespace="three_d_viewer")),
     url(r'^admin/', include(admin.site.urls)),
 )

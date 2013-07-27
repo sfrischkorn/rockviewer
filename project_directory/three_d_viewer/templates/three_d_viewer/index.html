@@ -1,0 +1,9 @@
+{% if active_samples %}
+    <ul>
+    {% for sample in active_samples %}
+        <li><a href="{% url 'three_d_viewer:detail' sample.id %}">{{ sample.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No samples are available.</p>
+{% endif %}
