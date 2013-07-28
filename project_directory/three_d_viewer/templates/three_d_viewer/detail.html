@@ -1,12 +1,14 @@
-#<h1>{{ sample.name }}</h1>
+{% load static %}
+
+<h1>{{ sample.name }}</h1>
 
 <html>
 
 <head>
 <title>js-openctm - Demo</title>
-<script type="text/javascript" src="lzma.js"></script>
-<script type="text/javascript" src="ctm.js"></script>
-<script type="text/javascript" src="glMatrix-0.9.5.min.js"></script>
+<script type="text/javascript" src="{% static "lzma.js" %}"></script>
+<script type="text/javascript" src="{% static "ctm.js" %}"></script>
+<script type="text/javascript" src="{% static "glMatrix-0.9.5.min.js" %}"></script>
 
 <script id="shader-vs" type="x-shader/x-vertex">
   attribute vec3 aVertexPosition;
@@ -70,8 +72,9 @@ function formatNumber(numero, decimales){
 }
 
 function load(){
+  var sampleFilename = '{{ sample.model_filename|escapejs }}';
   request = new XMLHttpRequest();
-  request.open("GET", "/Users/shanef/Documents/Dev/rockviewer/project_directory/three_d_viewer/templates/three_d_viewer/bunny.ctm", true);
+  request.open("GET", "{% get_static_prefix %}" + sampleFilename, true);
   request.overrideMimeType("text/plain; charset=x-user-defined");
   request.onreadystatechange = function(){
     if (this.readyState == 3 || this.readyState == 4){
@@ -360,9 +363,7 @@ function handleMouseMove(event){
 <center>
 <canvas id="canvas" style="border: 1px dotted #bfbfbf;" width="640" height="480"></canvas>
 <div><span id="progress" style="color: red"></span></br>
-<a href="male02.ctm">male02.ctm</a> - 842,718 vertices - 1,685,024 triangles - 6.00 MB - No texture</br></br>
-Unpacked using <a href="http://code.google.com/p/js-openctm/">js-openctm</a> - Rendered using WebGL<br><br>
-3D model courtesy of <a href="http://www.cyberware.com/products/scanners/pxSamples.html">Cyberware</a></div>
+</div>
 </center>
 <body>
 
