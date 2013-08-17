@@ -76,10 +76,8 @@ function formatNumber(numero, decimales){
 
 function load(){
   var sampleFilename = '{{ sample.model_filename|escapejs }}';
-  alert('{{ MEDIA_URL }}' + sampleFilename)
   request = new XMLHttpRequest();
   request.open("GET", '{{ MEDIA_URL }}' + sampleFilename, true);
-  {% comment %}request.open("GET", "{% get_static_prefix %}" + "three_d_viewer/" + sampleFilename, true);{% endcomment %}
   request.overrideMimeType("text/plain; charset=x-user-defined");
   request.onreadystatechange = function(){
     if (this.readyState == 3 || this.readyState == 4){
