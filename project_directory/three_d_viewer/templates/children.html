@@ -1,7 +1,0 @@
-<ul>
-    {% for child in children %}
-    <li> <a href="{{ child.get_absolute_url }}">{{ child }}</a></li>
-        {% child.children.count > 0 %}
-        {% children_list child %}
-    {% endfor %}
-</ul>
