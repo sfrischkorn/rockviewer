@@ -1,6 +1,14 @@
 Django==1.5.1
 South==0.8.1
+astroid==1.0.0
+coverage==3.6
 distribute==0.6.34
 django-dajax==0.9.2
 django-dajaxice==0.5.5
+django-jenkins==0.14.1
+jslint==0.6.0
+logilab-common==0.60.0
+pep8==1.4.6
+pyflakes==0.7.3
+pylint==1.0.0
 wsgiref==0.1.2
