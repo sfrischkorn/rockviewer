@@ -177,12 +177,17 @@ JENKINS_TASKS = (
     #'django_jenkins.tasks.django_tests',   # select one django or
     'django_jenkins.tasks.dir_tests',      # directory tests discovery
     'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pylint',
     'django_jenkins.tasks.run_pyflakes',
     #'django_jenkins.tasks.run_jshint',
     #'django_jenkins.tasks.run_csslint',    
     #'django_jenkins.tasks.run_sloccount',    
 )
 
+#Tell django_jenkins which files to analyse
+PROJECT_APPS=(
+    'three_d_viewer',
+)
 
 # Custom config settings
 MODEL_DIRS = (
