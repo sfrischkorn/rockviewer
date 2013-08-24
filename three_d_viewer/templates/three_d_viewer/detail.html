@@ -5,12 +5,15 @@
 
 <html>
 {{ sample.description }}
+<br>
+
 <head>
 <title>js-openctm - Demo</title>
 
 <script type="text/javascript" src="{% static "three_d_viewer/lzma.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/ctm.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/glMatrix-0.9.5.min.js" %}"></script>
+<script type="text/javascript" src="{% static "three_d_viewer/jquery-2.0.3.js" %}"></script>
 {% dajaxice_js_import %}
 
 <script id="shader-vs" type="x-shader/x-vertex">
@@ -359,9 +362,14 @@ function handleMouseMove(event){
 }
 
 function my_callback(data){
-    alert(data.message);
+    var message = "Incorrect";
+    if (data.result){
+        message = 'Correct';
+    }
+    alert(message);
 }
 </script>
+
 
 </head>
 
@@ -372,7 +380,13 @@ function my_callback(data){
 </div>
 </center>
 
-<input type="button" onclick="Dajaxice.three_d_viewer.dajaxice_example(my_callback)" value="Get message from server!">
+{% if sample.questions %}
+  {{ sample.questions.all.0 }}<br>
+  {% for answer in sample.questions.all.0.answers.all %}
+    <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
+  {% endfor %}
+  <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
+{% endif %}
 
 <body>
 

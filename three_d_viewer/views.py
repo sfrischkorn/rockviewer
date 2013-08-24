@@ -20,8 +20,7 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """
-        Return the last five published polls (not including those set to be
-        published in the future).
+        Return the active samples
         """
         return Sample.objects.filter(active=True)
 
