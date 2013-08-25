@@ -81,3 +81,10 @@ class ModelsTest(TestCase):
                                            question=testquestion)
         result = ajax.check_answer(None, testanswer.id, testquestion.id)
         self.assertEqual('{"result": false}', result)
+
+    def test_ajax_check_answer_incorrect(self):
+        testquestion = Question.objects.create(text="Test", sample_id=1)
+        testanswer = Answer.objects.create(text="Test", correct=True,
+                                           question=testquestion)
+        result = ajax.check_answer(None, testanswer.id + 1, testquestion.id)
+        self.assertEqual('{"result": false}', result)
