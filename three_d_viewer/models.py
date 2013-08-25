@@ -20,7 +20,8 @@ class Category(CommonInfo):
 
 class Sample(CommonInfo):
     model_filename = models.CharField(max_length=1000)
-    description = models.CharField(max_length=2000, default='', blank=True, null=True)
+    description = models.CharField(max_length=2000, default='', blank=True,
+                                   null=True)
     parent = models.ForeignKey(Category, blank=True, null=True,
                                on_delete=models.SET_NULL)
 
@@ -30,15 +31,16 @@ class Question(models.Model):
     sample = models.ForeignKey(Sample, related_name='questions')
 
     def correct_answers(self):
-        return self.answers.filter(correct = True)
-    
+        return self.answers.filter(correct=True)
+
     def __unicode__(self):
         return self.text
-    
+
+
 class Answer(models.Model):
     text = models.CharField(max_length=2000)
     correct = models.BooleanField(default=False)
     question = models.ForeignKey(Question, related_name='answers')
-    
+
     def __unicode__(self):
         return self.text
