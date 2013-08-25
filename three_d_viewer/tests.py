@@ -7,6 +7,7 @@ Replace this with more appropriate tests for your application.
 
 from django.test import TestCase
 from three_d_viewer.models import Category, Question, Answer
+import ajax
 
 
 class ModelsTest(TestCase):
@@ -65,3 +66,18 @@ class ModelsTest(TestCase):
         testquestion.answers = [answer, answer2, answer3, ]
 
         self.assertEqual(len(testquestion.correct_answers()), 2)
+
+    def test_ajax_check_answer_true(self):
+        testquestion = Question.objects.create(text="Test", sample_id=1)
+        testanswer = Answer.objects.create(text="Test", correct=True,
+                                           question=testquestion)
+
+        result = ajax.check_answer(None, testanswer.id, testquestion.id)
+        self.assertEqual('{"result": true}', result)
+
+    def test_ajax_check_answer_false(self):
+        testquestion = Question.objects.create(text="Test", sample_id=1)
+        testanswer = Answer.objects.create(text="Test", correct=False,
+                                           question=testquestion)
+        result = ajax.check_answer(None, testanswer.id, testquestion.id)
+        self.assertEqual('{"result": false}', result)
