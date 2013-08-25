@@ -1,6 +1,0 @@
-[run]
-source = three_d_viewer
-branch = True
-omit =
-    three_d_viewer/admin.py
-    three_d_viewer/tests.py
