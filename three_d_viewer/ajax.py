@@ -1,18 +1,20 @@
+"""
+Handle asynchronous calls from the web pages
+"""
+
 from django.utils import simplejson
 from dajaxice.decorators import dajaxice_register
 
-from three_d_viewer.models import Question
-
-
-@dajaxice_register
-def dajaxice_example(request):
-    test = check_answer(request, 3, 1)
-    print test
-    return simplejson.dumps({'message': 'Hello from Python!'})
+from models import Question
 
 
 @dajaxice_register
 def check_answer(request, answerid, questionid):
+    """
+    Check whether answerid is the correct answer for questionid.
+    Returns a boolean in 'result'
+    """
+
     question = Question.objects.get(id=int(questionid))
 
     result = False
@@ -20,5 +22,5 @@ def check_answer(request, answerid, questionid):
         print type(answer.id)
         if answer.id == int(answerid):
             result = True
-    print simplejson.dumps({'result': result})
+
     return simplejson.dumps({'result': result})

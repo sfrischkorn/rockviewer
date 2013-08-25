@@ -1,7 +1,8 @@
+"""
+Define the views for the Django MVC
+"""
+
 from django import template
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponseRedirect, HttpResponse
-from django.core.urlresolvers import reverse
 from django.views import generic
 
 from three_d_viewer.models import Sample
@@ -15,6 +16,9 @@ def children_tag(category):
 
 
 class IndexView(generic.ListView):
+    """
+    Define the page to display the Sample objects that can be viewed
+    """
     template_name = 'three_d_viewer/index.html'
     context_object_name = 'active_samples'
 
@@ -26,5 +30,8 @@ class IndexView(generic.ListView):
 
 
 class DetailView(generic.DetailView):
+    """
+    Define the view to view the 3D model of a sample
+    """
     model = Sample
     template_name = 'three_d_viewer/detail.html'
