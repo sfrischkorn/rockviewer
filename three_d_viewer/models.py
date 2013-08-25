@@ -58,6 +58,16 @@ class Question(models.Model):
         """
         return self.answers.filter(correct=True)
 
+    def check_answer(self, answerid):
+        """
+        Check if answerid is correct. Returns True if correct, else False
+        """
+        for answer in self.correct_answers():
+            if answer.id == int(answerid):
+                return True
+
+        return False
+
     def __unicode__(self):
         return self.text
 
