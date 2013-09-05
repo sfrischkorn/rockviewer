@@ -9,8 +9,8 @@ var Dajaxice = {
     
     three_d_viewer: {
     
-    dajaxice_example: function(callback_function, argv, custom_settings){
-        return Dajaxice.call('three_d_viewer.dajaxice_example', 'POST', callback_function, argv, custom_settings);
+    check_answer: function(callback_function, argv, custom_settings){
+        return Dajaxice.call('three_d_viewer.check_answer', 'POST', callback_function, argv, custom_settings);
     }
 
 

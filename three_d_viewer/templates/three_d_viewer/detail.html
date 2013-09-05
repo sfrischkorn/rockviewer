@@ -1,15 +1,11 @@
 {% load static %}
 {% load dajaxice_templatetags %}
 
-<h1>{{ sample.name }}</h1>
-
 <html>
-{{ sample.description }}
-<br>
 
 <head>
-<title>js-openctm - Demo</title>
-
+<title>3D Sample Viewer</title>
+<link href="{% static "three_d_viewer/css/bootstrap.css" %}" rel="stylesheet">
 <script type="text/javascript" src="{% static "three_d_viewer/lzma.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/ctm.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/glMatrix-0.9.5.min.js" %}"></script>
@@ -374,6 +370,10 @@ function my_callback(data){
 </head>
 
 <body onload="load();">
+<div class="page-header">
+        <h1>{{ sample.name }}</h1>
+        <p class="lead">{{ sample.description }}</p>
+</div>
 <center>
 <canvas id="canvas" style="border: 1px dotted #bfbfbf;" width=933 height="700"></canvas>
 <div><span id="progress" style="color: red"></span></br>
