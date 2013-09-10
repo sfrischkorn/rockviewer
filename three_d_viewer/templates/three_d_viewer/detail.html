@@ -1,3 +1,4 @@
+{% load url from future %}
 {% load static %}
 {% load dajaxice_templatetags %}
 
@@ -5,11 +6,12 @@
 
 <head>
 <title>3D Sample Viewer</title>
-<link href="{% static "three_d_viewer/css/bootstrap.css" %}" rel="stylesheet">
+<link href="{% static "three_d_viewer/css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
 <script type="text/javascript" src="{% static "three_d_viewer/lzma.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/ctm.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/glMatrix-0.9.5.min.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/jquery-2.0.3.js" %}"></script>
+<script type="text/javascript" srv="{% static "three_d_viewer/js/bootstrap.min.js" %}"></script>
 {% dajaxice_js_import %}
 
 <script id="shader-vs" type="x-shader/x-vertex">
@@ -370,24 +372,28 @@ function my_callback(data){
 </head>
 
 <body onload="load();">
-<div class="page-header">
-        <h1>{{ sample.name }}</h1>
-        <p class="lead">{{ sample.description }}</p>
-</div>
-<center>
-<canvas id="canvas" style="border: 1px dotted #bfbfbf;" width=933 height="700"></canvas>
-<div><span id="progress" style="color: red"></span></br>
-</div>
-</center>
+    <div class="container">
+        <div class="page-header">
+                <h1>{{ sample.name }}</h1>
+                <p class="lead">{{ sample.description }}</p>
+        </div>
 
-{% if sample.questions %}
-  {{ sample.questions.all.0 }}<br>
-  {% for answer in sample.questions.all.0.answers.all %}
-    <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
-  {% endfor %}
-  <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
-{% endif %}
-
-<body>
+        <div class="row">
+            <div class="col-md-4">
+                {% if sample.questions %}
+                    {{ sample.questions.all.0 }}<br>
+                        {% for answer in sample.questions.all.0.answers.all %}
+                            <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
+                        {% endfor %}
+                        <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
+                {% endif %}
+            </div>
+            <div class="col-md-8">
+                <canvas id="canvas" <!--style="border: 1px dotted #bfbfbf;" width=933 height="700"--></canvas>
+                <div><br><span id="progress" style="color: red"></span></div>
+            </div>
+        </div>
+    </div
+</body>
 
 </html>
