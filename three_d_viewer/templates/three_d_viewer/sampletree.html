@@ -1,0 +1,26 @@
+<script type='text/javascript'>
+    $(window).load(function(){
+        $('.tree-toggle').click(function () {
+            $(this).parent().children('ul.tree').toggle(200);
+        });
+    });
+</script>
+
+<div class="well">
+    <ul class="nav nav-list">
+        <h2>Samples</h2>
+        <ul>
+            <ul class="nav nav-list tree">
+                {% for category in parent_categories %}
+                    <li><label class="tree-toggle nav-header">{{ category.name }}</label>
+                        <ul class="nav nav-list tree">
+                            {% for sample in category.samples.all %}
+                                <li><a href="{% url 'three_d_viewer:detail' sample.id %}">{{ sample.name }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+        </ul>
+    </ul>
+</div>

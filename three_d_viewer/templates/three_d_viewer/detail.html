@@ -366,8 +366,7 @@ function my_callback(data){
     }
     alert(message);
 }
-</script>
-
+</script
 
 </head>
 
@@ -380,16 +379,23 @@ function my_callback(data){
 
         <div class="row">
             <div class="col-md-4">
-                {% if sample.questions %}
-                    {{ sample.questions.all.0 }}<br>
-                        {% for answer in sample.questions.all.0.answers.all %}
-                            <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
-                        {% endfor %}
-                        <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
-                {% endif %}
+                <div class="row">
+                    {% include "three_d_viewer/sampletree.html" %}
+                </div>
+                <div class="row">
+                    <div class="well">
+                        {% if sample.questions %}
+                            {{ sample.questions.all.0 }}<br>
+                                {% for answer in sample.questions.all.0.answers.all %}
+                                    <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
+                                {% endfor %}
+                                <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
+                        {% endif %}
+                    </div>
+                </div>
             </div>
             <div class="col-md-8">
-                <canvas id="canvas" <!--style="border: 1px dotted #bfbfbf;" width=933 height="700"--></canvas>
+                <canvas id="canvas"></canvas>
                 <div><br><span id="progress" style="color: red"></span></div>
             </div>
         </div>

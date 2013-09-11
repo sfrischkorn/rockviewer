@@ -42,7 +42,8 @@ class Sample(CommonInfo):
     description = models.CharField(max_length=2000, default='', blank=True,
                                    null=True)
     parent = models.ForeignKey(Category, blank=True, null=True,
-                               on_delete=models.SET_NULL)
+                               on_delete=models.SET_NULL,
+                               related_name="samples")
 
 
 class Question(models.Model):

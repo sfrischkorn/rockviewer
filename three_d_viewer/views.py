@@ -5,33 +5,39 @@ Define the views for the Django MVC
 from django import template
 from django.views import generic
 
-from three_d_viewer.models import Sample
+from three_d_viewer.models import Sample, Category
 register = template.Library()
 
 
-@register.inclusion_tag('children.html')
-def children_tag(category):
-    children = category.children.all()
-    return {'children': children}
-
-
-class IndexView(generic.ListView):
+class HomeView(generic.ListView):
     """
-    Define the page to display the Sample objects that can be viewed
+    Show the home page
     """
-    template_name = 'three_d_viewer/index.html'
-    context_object_name = 'active_samples'
 
-    def get_queryset(self):
-        """
-        Return the active samples
-        """
-        return Sample.objects.filter(active=True)
+    template_name = 'three_d_viewer/home.html'
+    model = Sample
+
+    def get_context_data(self, **kwargs):
+        context = super(HomeView, self).get_context_data(**kwargs)
+        context['active_samples'] = Sample.objects.filter(active=True)
+        context['parent_categories'] = Category.objects.filter(parent=None). \
+            filter(active=True)
+        return context
 
 
 class DetailView(generic.DetailView):
     """
     Define the view to view the 3D model of a sample
     """
+
     model = Sample
     template_name = 'three_d_viewer/detail.html'
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True)
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        context['active_samples'] = Sample.objects.filter(active=True)
+        context['parent_categories'] = Category.objects.filter(parent=None). \
+            filter(active=True)
+        return context
