@@ -7,7 +7,6 @@ Replace this with more appropriate tests for your application.
 
 from django.test import TestCase
 from three_d_viewer.models import Category, Question, Answer
-from three_d_viewer.views import DetailView
 import ajax
 
 
