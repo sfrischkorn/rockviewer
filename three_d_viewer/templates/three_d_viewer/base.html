@@ -1,0 +1,39 @@
+{% load static %}
+{% load dajaxice_templatetags %}
+
+<html>
+    <head>
+        <title>{% block title %}3D Sample Viewer{% endblock %}</title>
+
+        <link href="{% static "three_d_viewer/css/bootstrap.min.css" %}" rel="stylesheet" media="screen">
+        <script type="text/javascript" src="{% static "three_d_viewer/jquery-2.0.3.js" %}"></script>
+        <script type="text/javascript" srv="{% static "three_d_viewer/js/bootstrap.min.js" %}"></script>
+    </head>
+
+    <body onload={% block loadscript %}"load();"{% endblock %}>
+        <div class="container">
+            <div class="page-header">
+                {% block pageheader %}
+                <h1>Three D Viewer</h1>
+                <p class="lead">Look at some rocks</p>
+                {% endblock %}
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    {% block sidebar %}
+                    <div class="row">
+                        {% include "three_d_viewer/sampletree.html" %}
+                    </div>
+                    {% endblock %}
+                </div>
+
+                <div class="col-md-8">
+                    {% block content %}
+                    <p>Put some intro text sort of stuff here</p>
+                    {% endblock %}
+                </div>
+            </div>
+        </div
+    </body>
+</html>
