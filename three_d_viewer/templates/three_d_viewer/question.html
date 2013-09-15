@@ -1,0 +1,23 @@
+{% load dajaxice_templatetags %}
+{% dajaxice_js_import %}
+
+<script type="text/javascript">
+    function my_callback(data)
+    {
+        var message = "Incorrect";
+        if (data.result){
+            message = 'Correct';
+        }
+        alert(message);
+    }
+</script>
+
+{% if sample.questions.all %}
+    <div class="well">
+        {{ sample.questions.all.0 }}<br>
+            {% for answer in sample.questions.all.0.answers.all %}
+                <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
+            {% endfor %}
+            <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
+    </div>
+{% endif %}

@@ -1,14 +1,12 @@
 {% extends "three_d_viewer/base.html" %}
 
 {% load static %}
-{% load dajaxice_templatetags %}
 
 {% block includes %}
 {{ block.super }}
 <script type="text/javascript" src="{% static "three_d_viewer/js/lzma.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/js/ctm.js" %}"></script>
 <script type="text/javascript" src="{% static "three_d_viewer/js/glMatrix-0.9.5.min.js" %}"></script>
-{% dajaxice_js_import %}
 
 <script id="shader-vs" type="x-shader/x-vertex">
   attribute vec3 aVertexPosition;
@@ -354,42 +352,26 @@ function handleMouseMove(event){
     lastMouseY = newY;
   }
 }
-
-function my_callback(data){
-    var message = "Incorrect";
-    if (data.result){
-        message = 'Correct';
-    }
-    alert(message);
-}
 </script>
 {% endblock %}
 
 {% block loadscript %}"load();"{% endblock %}
 
 {% block pageheader %}
-<h1>{{ sample.name }}</h1>
-<p class="lead">{{ sample.description }}</p>
+    <h1>{{ sample.name }}</h1>
+    <p class="lead">{{ sample.description }}</p>
 {% endblock %}
 
 {% block sidebar %}
-<div class="row">
-    {% include "three_d_viewer/sampletree.html" %}
-</div>
-<div class="row">
-    <div class="well">
-        {% if sample.questions %}
-            {{ sample.questions.all.0 }}<br>
-                {% for answer in sample.questions.all.0.answers.all %}
-                    <input type="radio" name="answer" value={{answer.id}}>{{ answer}}</input><br>
-                {% endfor %}
-                <input type="button" onclick="Dajaxice.three_d_viewer.check_answer(my_callback, {'answerid':$('input:radio[name=answer]:checked').val(), 'questionid':{{ sample.questions.all.0.id }}})" value="Get message from server!" />
-        {% endif %}
+    <div class="row">
+        {% include "three_d_viewer/sampletree.html" %}
     </div>
-</div>
+    <div class="row">
+        {% include "three_d_viewer/question.html" %}
+    </div>
 {% endblock %}
 
 {% block content %}
-<canvas id="canvas" style="border: 1px dotted #bfbfbf;" width="640" height="480"></canvas>
-<div><br><span id="progress" style="color: red"></span></div>
+    <canvas id="canvas" style="border: 1px dotted #bfbfbf;" width="640" height="480"></canvas>
+    <div><br><span id="progress" style="color: red"></span></div>
 {% endblock %}
