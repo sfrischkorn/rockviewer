@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+        WSGIDaemonProcess rockviewer-production user=rockviewer group=rockviewer threads=10 python-path=~/www/rockviewer/lib/python2.6/site-packages
+        WSGIProcessGroup rockviewer-production
+        WSGIScriptAlias / ~/rockviewer/releases/current/rockviewer/rockviewer.wsgi
+        <Directory ~/rockviewer/releases/current/rockviewer>
+            Order deny,allow
+            Allow from all
+        </Directory>
+        ErrorLog /var/log/apache2/error.log
+        LogLevel warn
+        CustomLog /var/log/apache2/access.log combined
+</VirtualHost>
