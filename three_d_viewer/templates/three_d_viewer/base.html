@@ -6,7 +6,7 @@
         <title>{% block title %}3D Sample Viewer{% endblock %}</title>
 
         {% block includes %}
-        <link href="{% static "three_d_viewer/css/bootstrap.min.css" %}" rel="stylesheet" media="screen" />
+        <link href="{% static "three_d_viewer/css/bootstrap.css" %}" rel="stylesheet" media="screen" />
         <script type="text/javascript" src="{% static "three_d_viewer/js/jquery-2.0.3.js" %}"></script>
         <script type="text/javascript" src="{% static "three_d_viewer/js/bootstrap.min.js" %}"></script>
         {% endblock %}
@@ -30,7 +30,7 @@
                     {% endblock %}
                 </div>
 
-                <div class="col-md-8">
+                <div id="contentdiv" class="col-md-8" style="border:1px solid black" height="100%">
                     {% block content %}
                     <p>Put some intro text sort of stuff here</p>
                     {% endblock %}

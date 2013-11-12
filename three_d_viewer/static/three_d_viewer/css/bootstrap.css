@@ -29,6 +29,8 @@ audio,
 canvas,
 video {
   display: inline-block;
+  /*width: 100%;
+  height: 100%;*/
 }
 
 audio:not([controls]) {
@@ -849,6 +851,7 @@ pre code {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+  height: 80%;
 }
 
 .col-xs-1,
