@@ -127,7 +127,7 @@ function webGLStart(){
   canvas.onmousemove = handleMouseMove;
   canvas.onmousewheel = handleMouseWheel;
 
-  window.addEventListener("DOMMouseScroll", handleMouseWheel, false);
+  canvas.addEventListener("DOMMouseScroll", handleMouseWheel, false);
 
   tick();
 }
@@ -314,12 +314,16 @@ function degToRad(degrees){
 }
 
 function handleMouseWheel(event){
+  event.preventDefault();
+
   var delta = event.wheelDelta | -event.detail;
   if (delta < 0){
     translationMatrix[2] -= .05;
   }else{
     translationMatrix[2] += .05;
   }
+
+  event.returnValue=false;
 }
 
 function handleMouseDown(event){
@@ -372,6 +376,6 @@ function handleMouseMove(event){
 {% endblock %}
 
 {% block content %}
-    <canvas id="canvas" style="border: 1px dotted #bfbfbf;" width="640px" height="480px"></canvas>
+    <canvas id="canvas" style="border: 1px dotted #bfbfbf;" width="750px" height="600px"></canvas>
     <div><br><span id="progress" style="color: red"></span></div>
 {% endblock %}
