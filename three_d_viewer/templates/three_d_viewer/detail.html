@@ -70,6 +70,9 @@ function formatNumber(numero, decimales){
 }
 
 function load(){
+  window.addEventListener('resize', resizeCanvas, false);
+  resizeCanvas();
+  
   var sampleFilename = '{{ sample.model_filename|escapejs }}';
   request = new XMLHttpRequest();
   request.open("GET", '{{ MEDIA_URL }}' + sampleFilename, true);
@@ -107,8 +110,10 @@ function loaded(){
 }
 
 function webGLStart(){
-  var canvas = document.getElementById("canvas") ;
+  var canvas = document.getElementById("canvas");
+  canvas.oncontextmenu = function() { return false; } // supress the context menu in the canvas
 
+  
   initGL(canvas);
   initBoundingBox();
   initOffsets();
@@ -339,23 +344,57 @@ function handleMouseUp(event){
 function handleMouseMove(event){
   if (mouseDown){
     var newX = event.clientX;
-    var newY = event.clientY;
+	var newY = event.clientY;
+	var deltaX = newX - lastMouseX;
+	var deltaY = newY - lastMouseY;
+		
+	switch (event.which) {
+	  case 1: // left mouse
+		
 
-    var newRotationMatrix = mat4.create();
-    mat4.identity(newRotationMatrix);
+		var newRotationMatrix = mat4.create();
+		mat4.identity(newRotationMatrix);
+		mat4.rotate(newRotationMatrix, degToRad(deltaX / 5), [0, 1, 0]);
+	
+		mat4.rotate(newRotationMatrix, degToRad(deltaY / 5), [1, 0, 0]);
+		mat4.multiply(newRotationMatrix, rotationMatrix, rotationMatrix);
 
-    var deltaX = newX - lastMouseX;
-    mat4.rotate(newRotationMatrix, degToRad(deltaX / 5), [0, 1, 0]);
+	    break;
+	  case 3: // right mouse
+	    //translationMatrix[0] += deltaX;
+		//translationMatrix[1] += deltaY;
+		var newTranslateMatrix = mat4.create();
+		mat4.identity(newTranslateMatrix);
+		mat4.translate(newTranslateMatrix, [deltaX, deltaY, 0], [deltaX, deltaY, 0])
+		console.log('moving ' + deltaX + ', ' + deltaY)
 
-    var deltaY = newY - lastMouseY;
-    mat4.rotate(newRotationMatrix, degToRad(deltaY / 5), [1, 0, 0]);
-
-    mat4.multiply(newRotationMatrix, rotationMatrix, rotationMatrix);
-
-    lastMouseX = newX
-    lastMouseY = newY;
+	    break;
+	}    
+	
+	lastMouseX = newX
+	lastMouseY = newY;
   }
 }
+
+function resizeCanvas() {
+  var canvas = document.getElementById("canvas") ;
+  var parent = document.getElementById("contentdiv");
+  
+  var canvasWidth1 = canvas.width;
+  var canvasHeight1 = canvas.height;
+  
+  canvas.width = parent.offsetWidth;
+  canvas.height = parent.offsetHeight;
+  
+  if (gl){
+	/*hmove = canvas.width / 2 - canvasWidth1 / 2
+	vmove = canvas.height / 2 - canvasHeight1 / 2
+    mat4.translate(mvMatrix, [hmove, vmove, 0.0])
+	console.log('Resizing from ' + canvasWidth1 + ' x ' + canvasHeight1 + ' to ' + canvas.width + ' x ' + canvas.height);
+	console.log('moving centre ' + hmove + ' x ' + vmove)*/
+  }
+}
+
 </script>
 {% endblock %}
 
@@ -376,6 +415,6 @@ function handleMouseMove(event){
 {% endblock %}
 
 {% block content %}
-    <canvas id="canvas" style="border: 1px dotted #bfbfbf;" width="750px" height="600px"></canvas>
+    <canvas id="canvas"></canvas>
     <div><br><span id="progress" style="color: red"></span></div>
 {% endblock %}
