@@ -46,6 +46,23 @@ class Sample(CommonInfo):
                                related_name="samples")
 
 
+class Mineral(Sample):
+	"""
+	Extending the Sample class to add details specific to minerals
+	"""
+	chemical_formula = models.CharField(max_length=100, blank=True)
+	hardness = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+	specific_gravity = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
+	cleavage_fracture = models.CharField(max_length=100, blank=True)
+	lustre = models.CharField(max_length=100, blank=True)
+	colour = models.CharField(max_length=100, blank=True)
+	streak = models.CharField(max_length=100, blank=True)
+	habit = models.CharField(max_length=100, blank=True)
+	crystallography = models.CharField(max_length=100, blank=True)
+	identifying_features = models.CharField(max_length=1000, blank=True)
+	occurance = models.CharField(max_length=1000, blank=True)
+
+	
 class Question(models.Model):
     """
     The definition of a multiple choice question, associated with a Sample
