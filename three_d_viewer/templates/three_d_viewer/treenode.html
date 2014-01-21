@@ -1,13 +1,13 @@
 <li><label class="tree-toggle nav-header">{{ category.name }}</label>
     <ul class="nav nav-list tree">
-    {% for child in category.children.all %}
+    {% for child in category.active_children %}
         {% with category=child template_name="three_d_viewer/treenode.html" %}
             <ul style="list-style: none;">
                 {% include template_name %}
             </ul>
         {%endwith%}
     {% endfor %}
-    {% for sample in category.samples.all %}
+    {% for sample in category.active_samples %}
             <li><a href="{% url 'three_d_viewer:detail' sample.id %}">{{ sample.name }}</a></li>
     {% endfor %}
     </ul>

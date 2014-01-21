@@ -32,6 +32,14 @@ class Category(CommonInfo):
                                on_delete=models.SET_NULL,
                                related_name='children')
 
+    @property
+    def active_children(self):
+        return self.children.filter(active=True)
+
+    @property
+    def active_samples(self):
+        return self.samples.filter(active=True)
+
 
 class Sample(CommonInfo):
     """
@@ -57,12 +65,12 @@ class Mineral(Sample):
 	lustre = models.CharField(max_length=100, blank=True)
 	colour = models.CharField(max_length=100, blank=True)
 	streak = models.CharField(max_length=100, blank=True)
-	habit = models.CharField(max_length=100, blank=True)
+	habit = models.CharField(max_length=1000, blank=True)
 	crystallography = models.CharField(max_length=100, blank=True)
 	identifying_features = models.CharField(max_length=1000, blank=True)
 	occurance = models.CharField(max_length=1000, blank=True)
 
-	
+
 class Question(models.Model):
     """
     The definition of a multiple choice question, associated with a Sample

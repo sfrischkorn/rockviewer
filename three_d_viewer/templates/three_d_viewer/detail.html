@@ -72,8 +72,15 @@ function formatNumber(numero, decimales){
 function load(){
   window.addEventListener('resize', resizeCanvas, false);
   resizeCanvas();
-  
+
   var sampleFilename = '{{ sample.model_filename|escapejs }}';
+
+  if (sampleFilename.trim() == "")
+  {
+    document.getElementById("progress").innerHTML = "No model defined!";
+    return;
+  }
+
   request = new XMLHttpRequest();
   request.open("GET", '{{ MEDIA_URL }}' + sampleFilename, true);
   request.overrideMimeType("text/plain; charset=x-user-defined");
@@ -113,7 +120,7 @@ function webGLStart(){
   var canvas = document.getElementById("canvas");
   canvas.oncontextmenu = function() { return false; } // supress the context menu in the canvas
 
-  
+
   initGL(canvas);
   initBoundingBox();
   initOffsets();
@@ -347,15 +354,15 @@ function handleMouseMove(event){
 	var newY = event.clientY;
 	var deltaX = newX - lastMouseX;
 	var deltaY = newY - lastMouseY;
-		
+
 	switch (event.which) {
 	  case 1: // left mouse
-		
+
 
 		var newRotationMatrix = mat4.create();
 		mat4.identity(newRotationMatrix);
 		mat4.rotate(newRotationMatrix, degToRad(deltaX / 5), [0, 1, 0]);
-	
+
 		mat4.rotate(newRotationMatrix, degToRad(deltaY / 5), [1, 0, 0]);
 		mat4.multiply(newRotationMatrix, rotationMatrix, rotationMatrix);
 
@@ -369,8 +376,8 @@ function handleMouseMove(event){
 		console.log('moving ' + deltaX + ', ' + deltaY)
 
 	    break;
-	}    
-	
+	}
+
 	lastMouseX = newX
 	lastMouseY = newY;
   }
@@ -379,13 +386,13 @@ function handleMouseMove(event){
 function resizeCanvas() {
   var canvas = document.getElementById("canvas") ;
   var parent = document.getElementById("contentdiv");
-  
+
   var canvasWidth1 = canvas.width;
   var canvasHeight1 = canvas.height;
-  
+
   canvas.width = parent.offsetWidth;
   canvas.height = parent.offsetHeight;
-  
+
   if (gl){
 	/*hmove = canvas.width / 2 - canvasWidth1 / 2
 	vmove = canvas.height / 2 - canvasHeight1 / 2
