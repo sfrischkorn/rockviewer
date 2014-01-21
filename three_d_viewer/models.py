@@ -3,6 +3,7 @@ Defines the models that that Django application uses
 """
 
 from django.db import models
+from model_utils.managers import InheritanceManager
 
 
 class CommonInfo(models.Model):
@@ -32,6 +33,8 @@ class Category(CommonInfo):
                                on_delete=models.SET_NULL,
                                related_name='children')
 
+    objects = InheritanceManager()
+
     @property
     def active_children(self):
         return self.children.filter(active=True).order_by('name')
@@ -52,6 +55,16 @@ class Sample(CommonInfo):
     parent = models.ForeignKey(Category, blank=True, null=True,
                                on_delete=models.SET_NULL,
                                related_name="samples")
+
+    #Use the inheritance manager for handling subclasses
+    objects = InheritanceManager()
+
+    @property
+    def url(self):
+        if isinstance(self, Mineral):
+            return 'three_d_viewer:mineral_detail'
+        else:
+            return 'three_d_viewer:detail'
 
 
 class Mineral(Sample):
