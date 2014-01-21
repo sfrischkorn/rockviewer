@@ -19,9 +19,9 @@ class HomeView(generic.ListView):
 
     def get_context_data(self, **kwargs):
         context = super(HomeView, self).get_context_data(**kwargs)
-        context['active_samples'] = Sample.objects.filter(active=True)
+        context['active_samples'] = Sample.objects.filter(active=True).order_by('name')
         context['parent_categories'] = Category.objects.filter(parent=None). \
-            filter(active=True)
+            filter(active=True).order_by('name')
         return context
 
 
@@ -33,11 +33,11 @@ class DetailView(generic.DetailView):
     model = Sample
     template_name = 'three_d_viewer/detail.html'
     parent_categories = Category.objects.filter(parent=None). \
-        filter(active=True)
+        filter(active=True).order_by("name")
 
     def get_context_data(self, **kwargs):
         context = super(DetailView, self).get_context_data(**kwargs)
-        context['active_samples'] = Sample.objects.filter(active=True)
+        context['active_samples'] = Sample.objects.filter(active=True).order_by('name')
         context['parent_categories'] = Category.objects.filter(parent=None). \
-            filter(active=True)
+            filter(active=True).order_by('name')
         return context

@@ -34,11 +34,11 @@ class Category(CommonInfo):
 
     @property
     def active_children(self):
-        return self.children.filter(active=True)
+        return self.children.filter(active=True).order_by('name')
 
     @property
     def active_samples(self):
-        return self.samples.filter(active=True)
+        return self.samples.filter(active=True).order_by('name')
 
 
 class Sample(CommonInfo):
