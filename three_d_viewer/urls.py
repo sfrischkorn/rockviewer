@@ -6,7 +6,7 @@ urlpatterns = patterns(
     '',
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
-    url(r'^(?P<pk>\d+)/$', views.MineralDetailView.as_view(), name='mineral_detail'),
+    url(r'^minerals/(?P<pk>\d+)/$', views.MineralDetailView.as_view(), name='mineral_detail'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 )

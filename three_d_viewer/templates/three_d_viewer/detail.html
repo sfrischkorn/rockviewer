@@ -69,6 +69,7 @@ function formatNumber(numero, decimales){
   return parseInt(numero * pot) / pot;
 }
 
+{% block load %}
 function load(){
   window.addEventListener('resize', resizeCanvas, false);
   resizeCanvas();
@@ -96,6 +97,7 @@ function load(){
   }
   request.send();
 }
+{% endblock load %}
 
 function loaded(){
   /*if ( navigator.userAgent.indexOf("WebKit") == -1){

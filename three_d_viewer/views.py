@@ -49,3 +49,13 @@ class MineralDetailView(DetailView):
 
     model = Mineral
     template_name = 'three_d_viewer/mineral_detail.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+    def get_context_data(self, **kwargs):
+        context = super(DetailView, self).get_context_data(**kwargs)
+        context['active_samples'] = Sample.objects.select_subclasses(Mineral).filter(active=True).order_by('name')
+        context['parent_categories'] = Category.objects.filter(parent=None). \
+            filter(active=True).order_by('name')
+        return context

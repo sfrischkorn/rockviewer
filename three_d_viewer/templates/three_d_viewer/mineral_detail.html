@@ -1,6 +1,83 @@
 {% extends "three_d_viewer/detail.html" %}
 
 {% block pageheader %}
-    <h1>{{ 'MINERALS' }}</h1>
-    <p class="lead">{{ sample.description }}</p>
+    <h1>{{ mineral.name }}</h1>
+    <p class="lead">{{ mineral.description }}</p>
 {% endblock %}
+
+{% block load %}
+function load(){
+  window.addEventListener('resize', resizeCanvas, false);
+  resizeCanvas();
+
+  var sampleFilename = '{{ mineral.model_filename|escapejs }}';
+
+  if (sampleFilename.trim() == "")
+  {
+    document.getElementById("progress").innerHTML = "No model defined!";
+    return;
+  }
+
+  request = new XMLHttpRequest();
+  request.open("GET", '{{ MEDIA_URL }}' + sampleFilename, true);
+  request.overrideMimeType("text/plain; charset=x-user-defined");
+  request.onreadystatechange = function(){
+    if (this.readyState == 3 || this.readyState == 4){
+      document.getElementById("progress").innerHTML = "Downloading... "
+        + formatNumber(this.responseText.length / 1048576, 2) + " MB";
+    }
+    if (this.readyState == 4 && (this.status == 200 || this.status == 0) ){
+      document.getElementById("progress").innerHTML = "Unpacking...";
+      setTimeout(loaded, 1);
+    }
+  }
+  request.send();
+}
+{% endblock load %}
+
+{% block details %}
+  <div class="panel panel-default">
+    <div class="panel-heading">{{ mineral.name }} Details</div>
+    <table class="table">
+      <tr>
+        <td>Chemical Formula</td>
+        <td>{{ mineral.chemical_formula }}</td>
+      </tr>
+      <tr>
+        <td>Hardness</td>
+        <td>{{ mineral.hardness }}</td>
+      </tr>
+      <tr>
+        <td>Specific Gravity</td>
+        <td>{{ mineral.specific_gravity }}</td>
+      </tr>
+      <tr>
+        <td>Cleavage/Fracture</td>
+        <td>{{ mineral.cleavage_fracture }}</td>
+      </tr>
+      <tr>
+        <td>Lustre</td>
+        <td>{{ mineral.lustre }}</td>
+      </tr>
+      <tr>
+        <td>Colour</td>
+        <td>{{ mineral.colour }}</td>
+      </tr>
+      <tr>
+        <td>Streak</td>
+        <td>{{ mineral.habit }}</td>
+      </tr>
+      <tr>
+        <td>Crystallography</td>
+        <td>{{ mineral.crystallography }}</td>
+      </tr>
+      <tr>
+        <td>Identifying features</td>
+        <td>{{ mineral.identifying_features }}</td>
+      </tr>
+        <td>Occurance</td>
+        <td>{{ mineral.occurance }}</td>
+      </tr>
+    </table>
+  </div>
+{% endblock details %}

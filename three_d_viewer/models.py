@@ -41,7 +41,7 @@ class Category(CommonInfo):
 
     @property
     def active_samples(self):
-        return self.samples.filter(active=True).order_by('name')
+        return self.samples.select_subclasses(Sample, Mineral).filter(active=True).order_by('name')
 
 
 class Sample(CommonInfo):
