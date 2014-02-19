@@ -1,0 +1,306 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+@font-face {
+    font-family: 'quicksandbold';
+    src: url('fonts/qcksnd-bold-webfont.eot');
+    src: url('fonts/qcksnd-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-bold-webfont.woff') format('woff'),
+         url('fonts/qcksnd-bold-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-bold-webfont.svg#quicksandbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandbold_italic';
+    src: url('fonts/qcksnd-bolditalic-webfont.eot');
+    src: url('fonts/qcksnd-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-bolditalic-webfont.woff') format('woff'),
+         url('fonts/qcksnd-bolditalic-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-bolditalic-webfont.svg#quicksandbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksanddash';
+    src: url('fonts/qcksnd-dash-webfont.eot');
+    src: url('fonts/qcksnd-dash-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-dash-webfont.woff') format('woff'),
+         url('fonts/qcksnd-dash-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-dash-webfont.svg#quicksanddash') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksanditalic';
+    src: url('fonts/qcksnd-italic-webfont.eot');
+    src: url('fonts/qcksnd-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-italic-webfont.woff') format('woff'),
+         url('fonts/qcksnd-italic-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-italic-webfont.svg#quicksanditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandlight';
+    src: url('fonts/qcksnd-light-webfont.eot');
+    src: url('fonts/qcksnd-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-light-webfont.woff') format('woff'),
+         url('fonts/qcksnd-light-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-light-webfont.svg#quicksandlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandlight_italic';
+    src: url('fonts/qcksnd-lightitalic-webfont.eot');
+    src: url('fonts/qcksnd-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-lightitalic-webfont.woff') format('woff'),
+         url('fonts/qcksnd-lightitalic-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-lightitalic-webfont.svg#quicksandlight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('fonts/qcksnd-regular-webfont.eot');
+    src: url('fonts/qcksnd-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/qcksnd-regular-webfont.woff') format('woff'),
+         url('fonts/qcksnd-regular-webfont.ttf') format('truetype'),
+         url('fonts/qcksnd-regular-webfont.svg#quicksandregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#cssmenu ul,
+#cssmenu li,
+#cssmenu span,
+#cssmenu a {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+#cssmenu {
+  width: 100%;
+  height: 49px;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  background: #fefefe;
+  background: -moz-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #eee9f0));
+  background: -webkit-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+  background: -o-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+  background: -ms-linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+  background: linear-gradient(top, #fefefe 0%, #eee9f0 100%);
+  border-bottom: 2px solid #6b6b6b;
+
+}
+#cssmenu:after,
+#cssmenu ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+#cssmenu a {
+  background: #fefefe;
+  background: -moz-linear-gradient(top, #fefefe 0%, #ececec 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #ececec));
+  background: -webkit-linear-gradient(top, #fefefe 0%, #ececec 100%);
+  background: -o-linear-gradient(top, #fefefe 0%, #ececec 100%);
+  background: -ms-linear-gradient(top, #fefefe 0%, #ececec 100%);
+  background: linear-gradient(top, #fefefe 0%, #ececec 100%);
+  color: #000;
+  display: inline-block;
+  font-family: 'quicksandbold', Helvetica, Arial, Verdana, sans-serif;
+  letter-spacing: 1px;
+  font-size: 12px;
+  line-height: 49px;
+  padding: 0 20px;
+  text-decoration: none;
+}
+#cssmenu ul {
+  list-style: none;
+}
+#cssmenu > ul {
+  float: left;
+}
+#cssmenu > ul > li {
+  float: left;
+}
+#cssmenu > ul > li > a {
+  color: #000;
+  font-size: 12px;
+}
+#cssmenu > ul > li:hover:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #6b6b6b;
+  margin-left: -10px;
+}
+#cssmenu > ul > li:first-child > a {
+  border-radius: 5px 0 0 0;
+  -moz-border-radius: 5px 0 0 0;
+  -webkit-border-radius: 5px 0 0 0;
+}
+#cssmenu > ul > li.active:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #6b6b6b;
+  margin-left: -10px;
+}
+#cssmenu > ul > li.active > a {
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  background: #ececec;
+  background: -moz-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #ffeeff ef));
+  background: -webkit-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: -o-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: -ms-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+}
+#cssmenu > ul > li:hover > a {
+  background: #ececec;
+  background: -moz-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ececec), color-stop(100%, #ffeeff ef));
+  background: -webkit-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: -o-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: -ms-linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  background: linear-gradient(top, #ececec 0%, #ffeeff ef 100%);
+  -moz-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.1);
+}
+#cssmenu .has-sub {
+  z-index: 1;
+}
+#cssmenu .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub ul {
+  display: none;
+  position: absolute;
+  width: 200px;
+  top: 100%;
+  left: 0;
+}
+#cssmenu .has-sub ul li {
+  *margin-bottom: -1px;
+}
+#cssmenu .has-sub ul li a {
+  background: #6b6b6b;
+  border-bottom: 1px dotted #858585;
+  filter: none;
+  font-size: 11px;
+  display: block;
+  line-height: 120%;
+  padding: 10px;
+  color: #ffffff;
+}
+#cssmenu .has-sub ul li:hover a {
+  background: #525252;
+}
+#cssmenu .has-sub .has-sub:hover > ul {
+  display: block;
+}
+#cssmenu .has-sub .has-sub ul {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+#cssmenu .has-sub .has-sub ul li a {
+  background: #525252;
+  border-bottom: 1px dotted #858585;
+}
+#cssmenu .has-sub .has-sub ul li a:hover {
+  background: #454545;
+}
+
+h1.titleText {
+	font-family: 'quicksandbold', Helvetica, Arial, Verdana, sans-serif;
+  	font-size: 28px;
+	text-align: center;
+	padding: 7px 0 0 0;
+}
+
+/* This DIV will be hidden on initial page load and will be revealed when a link associated with a 3D object is clicked.
+Its width will match the total width of buttons in the cssmenu DIV.
+It will contain information about each mineral, loaded when the associated mineral is clicked*/
+#infoBox {
+	display: none; /*remove this style to view the DIV*/
+	width: 500px;
+	height: auto;
+	float: left;
+	background-color: #FFFFFF;
+}
+
+#introBox {
+	width: 100%;
+	height: 100vh;
+	background-image:url('images/background_tile_lightest.jpg');
+	background-repeat: repeat;
+	background-attachment: scroll;
+	padding-top: 20px;
+}
+
+#introBox p {
+	font-family: 'quicksandregular', Helvetica, Arial, Verdana, sans-serif;
+	font-size: 12pt;
+	margin-bottom: 12pt;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.boldText {
+	font-family: 'quicksandbold', Helvetica, Arial, Verdana, sans-serif;
+}

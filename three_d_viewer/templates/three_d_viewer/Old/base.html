@@ -1,0 +1,68 @@
+{% load static %}
+{% load dajaxice_templatetags %}
+
+<html>
+    <head>
+        <title>{% block title %}3D Sample Viewer{% endblock %}</title>
+
+        {% block includes %}
+        <link href="{% static "three_d_viewer/css/bootstrap.css" %}" rel="stylesheet" media="screen" />
+        <link href="{% static "three_d_viewer/css/custom.css" %}" rel="stylesheet" media="screen" />
+        <script type="text/javascript" src="{% static "three_d_viewer/js/jquery-2.0.3.js" %}"></script>
+        <script type="text/javascript" src="{% static "three_d_viewer/js/bootstrap.min.js" %}"></script>
+        {% endblock %}
+    </head>
+
+    <body onload={% block loadscript %}""{% endblock %}>
+        <div class="my-fluid-container">
+            <div class="page-header">
+                {% block pageheader %}
+                <h1>Three-D Virtual Object Library</h1>
+                <p class="lead">3DVOL</p>
+                {% endblock %}
+            </div>
+
+            <div class="row my-fluid-container">
+                <div class="col-sm-3">
+                    {% block sidebar %}
+                    <div class="row">
+                        {% include "three_d_viewer/Old/sampletree.html" %}
+                    </div>
+                    {% endblock %}
+                </div>
+
+                <div id="contentdiv" class="col-sm-9" height="100%">
+				    <div class="row">
+                      {% block content %}
+                      <p><h3>Welcome to 3DVOL – Minerals.</h3><br><br>
+						This website contains a three-dimensional virtual object library of the most important rock-forming minerals making up planet Earth. You will find information on:<br>
+						<ul>
+						  <li>Which are the most common minerals on Earth?</li>
+						  <li>What are their most important physical and chemical properties?</li>
+						<li>Where in the Earth and under which physical conditions do they form?</li>
+						<li>How can they be identified in hand specimen?</li>
+						</ul>
+						A mineral is typically defined as an inorganic solid with a particular chemical composition and a characteristic, periodic atomic structure. 
+						This characteristic atomic make-up is often reflected in the macroscopic crystalline structure of a mineral. 
+						The 3D models presented on this website will help you to visualise, study, and memorise these beautiful and often 
+						complex crystal structures as well as other diagnostic features of minerals.
+						<br>
+						We hope that you enjoy using 3DVOL.
+						<br><br>
+						Your 3DVOL team
+						<br><br>
+						Acknowledgements
+						<br>
+						3DVOL is funded by the QUT Teaching and Learning Unit and the School of Earth, Environmental, and Biological Sciences. QUT High Performance Computing provides technical support.
+					  </p>
+                      {% endblock %}
+				    </div>
+     				<div class="row">
+                        {% block details %}
+                        {% endblock details %}
+                    </div>
+				</div>
+            </div>
+        </div>
+    </body>
+</html>
