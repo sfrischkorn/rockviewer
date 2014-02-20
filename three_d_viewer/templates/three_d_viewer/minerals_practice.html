@@ -1,54 +1,7 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>3DVOL - Minerals/Practice</title>
-<link rel='stylesheet' type='text/css' href='styles.css' />
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-<script type='text/javascript' src='menu_jquery.js'></script>
-<script>
-	$(document).ready(function(){
-	
-	$('a').click(function () {
-	var divname= this.name;
-	$("#"+divname).show("slow").siblings().hide("slow");
-	});
-	
-	});
-</script> 
-</head>
+{% extends "three_d_viewer/base.html" %}
 
-<body>
-<div id="wrapper">
-<div id="container">
-	<div id="header">
-        <div id="logo">
-        <p>3D VOL</p>
-        </div>
-    	<div id="menuContainer">
-            <div id='cssmenu'>
-            <ul>
-               <li class='active mainitem'><a href='home.html'><span>Home</span></a></li>
-               <li class='has-sub mainitem'><a href='#'><span>Minerals</span></a>
-                  <ul>
-                     <li class='has-sub'><a href='minerals_theory.html'><span>Theory</span></a>
-                        <ul>
-                           <li><a href='minerals_theory.html#structureofearth'><span>Structure of Earth</span></a></li>
-                           <li><a href='minerals_theory.html#pressureandtemp'><span>Pressure and temperature</span></a></li>
-                           <li class='last'><a href='minerals_theory.html#bowensreactionseries'><span>Bowen's reaction series</span></a></li>
-                        </ul>
-                     </li>
-                     <li><a href='#'><span>Practice</span></a></li>
-                     <li class='last'><a href='minerals_selftest.html'><span>Self Test</span></a></li>
-                  </ul>
-               </li>
-               <li class="mainitem"><a href='#'><span>Rocks</span></a></li>
-               <li class='last mainitem'><a href='#'><span>Fossils</span></a></li>
-            </ul>
-            </div>
-    </div>
-    <div id="content">
-		<div id="sidebar">
+{% block content %}
+<div id="sidebar">
                             <div id='mineralMenu'>
                             <ul>
                                 <li class="has-sub mainitem"><a href="#">Select a mineral</a>
@@ -93,22 +46,8 @@
                             </div>
         </div>
         <div id="virtualObject">
-        
+
         	<img src="images/rock_example.jpeg" class="example" />
-        
         </div>
-    </div>
-</div>
 
-<div id="push"></div><!-- CLOSE PUSH !-->
-</div><!-- CLOSE WRAPPER !-->
-<div id="footer">
-<ul>
-	<li><a href="#">Glossary</a></li>
-    <li>&nbsp; - &nbsp;</li>
-    <li><a href="#">Acknowledgements</a></li>
-</ul>
-</div><!-- CLOSE FOOTER !-->
-
-</body>
-</html>
+{% endblock %}

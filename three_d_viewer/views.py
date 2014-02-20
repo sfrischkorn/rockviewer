@@ -25,6 +25,7 @@ class HomeView(generic.ListView):
         return context
 
 
+
 class DetailView(generic.DetailView):
     """
     Define the view to view the 3D model of a sample

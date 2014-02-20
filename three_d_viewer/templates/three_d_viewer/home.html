@@ -1,62 +1,28 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>3DVOL - 3D Virtual Object Library</title>
-<link rel='stylesheet' type='text/css' href='styles.css' />
-<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
-<script type='text/javascript' src='menu_jquery.js'></script>
-</head>
+{% extends "three_d_viewer/base.html" %}
 
-<body>
-<div id="wrapper">
-<div id="container">
-	<div id="header">
-        <div id="logo">
-        <p>3D VOL</p>
-        </div><!-- CLOSE LOGO !-->
-    	<div id="menuContainer">
-            <div id='cssmenu'>
-            <ul>
-               <li class='active mainitem'><a href='home.html'><span>Home</span></a></li>
-               <li class='has-sub mainitem'><a href='#'><span>Minerals</span></a>
-                  <ul>
-                     <li class='has-sub'><a href='minerals_theory.html'><span>Theory</span></a>
-                        <ul>
-                           <li><a href='minerals_theory.html#structureofearth'><span>Structure of Earth</span></a></li>
-                           <li><a href='minerals_theory.html#pressureandtemp'><span>Pressure and temperature</span></a></li>
-                           <li class='last'><a href='minerals_theory.html#bowensreactionseries'><span>Bowen's reaction series</span></a></li>
-                        </ul>
-                     </li>
-                     <li><a href='minerals_practice.html'><span>Practice</span></a></li>
-                     <li class='last'><a href='minerals_selftest.html'><span>Self Test</span></a></li>
-                  </ul>
-               </li>
-               <li class="mainitem"><a href='#'><span>Rocks</span></a></li>
-               <li class='last mainitem'><a href='#'><span>Fossils</span></a></li>
-            </ul>
-            </div><!-- CLOSE CSSMENU !-->
-    </div><!-- CLOSE MENUCONTAINER !-->
-    </div><!-- HEADER !-->
-    <div id="content">
-    <div id="pushDown"></div>
+{% block content %}
+        <div id="pushDown"></div>
     	<div id="mainText">
-        <p>Line of placeholder text for introduction to 3DVOL</p>
-        <p>Line of placeholder text</p>
-        <p>Line of placeholder text</p>
-        <p>Line of placeholder text</p>
-        <p>Line of placeholder text</p>
+        <p><h3>Welcome to 3DVOL – Minerals.</h3><br><br>
+						This website contains a three-dimensional virtual object library of the most important rock-forming minerals making up planet Earth. You will find information on:<br>
+						<ul>
+						  <li>Which are the most common minerals on Earth?</li>
+						  <li>What are their most important physical and chemical properties?</li>
+						<li>Where in the Earth and under which physical conditions do they form?</li>
+						<li>How can they be identified in hand specimen?</li>
+						</ul>
+						A mineral is typically defined as an inorganic solid with a particular chemical composition and a characteristic, periodic atomic structure.
+						This characteristic atomic make-up is often reflected in the macroscopic crystalline structure of a mineral.
+						The 3D models presented on this website will help you to visualise, study, and memorise these beautiful and often
+						complex crystal structures as well as other diagnostic features of minerals.
+						<br>
+						We hope that you enjoy using 3DVOL.
+						<br><br>
+						Your 3DVOL team
+						<br><br>
+						Acknowledgements
+						<br>
+						3DVOL is funded by the QUT Teaching and Learning Unit and the School of Earth, Environmental, and Biological Sciences. QUT High Performance Computing provides technical support.
+					  </p>
         </div><!-- CLOSE MAINTEXT !-->
-    </div><!-- CLOSE CONTENT !-->
-</div><!-- CLOSE CONTAINER !-->
-<div id="push"></div><!-- CLOSE PUSH !-->
-</div><!-- CLOSE WRAPPER !-->
-<div id="footer">
-<ul>
-	<li><a href="#">Glossary</a></li>
-    <li>&nbsp; - &nbsp;</li>
-    <li><a href="#">Acknowledgements</a></li>
-</ul>
-</div><!-- CLOSE FOOTER !-->
-</body>
-</html>
+{% endblock %}

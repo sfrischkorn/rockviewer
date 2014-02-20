@@ -20,18 +20,18 @@
     	<div id="menuContainer">
             <div id='cssmenu'>
             <ul>
-               <li class='active mainitem'><a href='home.html'><span>Home</span></a></li>
+               <li class='active mainitem'><a href="{% url 'three_d_viewer:home' %}"><span>Home</span></a></li>
                <li class='has-sub mainitem'><a href='#'><span>Minerals</span></a>
                   <ul>
-                     <li class='has-sub'><a href='minerals_theory.html'><span>Theory</span></a>
+                     <li class='has-sub'><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Theory</span></a>
                         <ul>
-                           <li><a href='minerals_theory.html#structureofearth'><span>Structure of Earth</span></a></li>
-                           <li><a href='minerals_theory.html#pressureandtemp'><span>Pressure and temperature</span></a></li>
-                           <li class='last'><a href='minerals_theory.html#bowensreactionseries'><span>Bowen's reaction series</span></a></li>
+                           <li><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Structure of Earth</span></a></li>
+                           <li><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Pressure and temperature</span></a></li>
+                           <li class='last'><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Bowen's reaction series</span></a></li>
                         </ul>
                      </li>
-                     <li><a href='minerals_practice.html'><span>Practice</span></a></li>
-                     <li class='last'><a href='minerals_selftest.html'><span>Self Test</span></a></li>
+                     <li><a href="{% url 'three_d_viewer:minerals_practice' %}"><span>Practice</span></a></li>
+                     <li class='last'><a href="{% url 'three_d_viewer:minerals_selftest' %}"><span>Self Test</span></a></li>
                   </ul>
                </li>
                <li class="mainitem"><a href='#'><span>Rocks</span></a></li>
@@ -41,14 +41,8 @@
     </div><!-- CLOSE MENUCONTAINER !-->
     </div><!-- HEADER !-->
     <div id="content">
-    <div id="pushDown"></div>
-    	<div id="mainText">
-        <p>Line of placeholder text for introduction to 3DVOL</p>
-        <p>Line of placeholder text</p>
-        <p>Line of placeholder text</p>
-        <p>Line of placeholder text</p>
-        <p>Line of placeholder text</p>
-        </div><!-- CLOSE MAINTEXT !-->
+        {% block content %}
+        {% endblock %}
     </div><!-- CLOSE CONTENT !-->
 </div><!-- CLOSE CONTAINER !-->
 <div id="push"></div><!-- CLOSE PUSH !-->
@@ -61,3 +55,4 @@
 </ul>
 </div><!-- CLOSE FOOTER !-->
 </body>
+</html>
