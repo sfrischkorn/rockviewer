@@ -2,52 +2,50 @@
 
 {% block content %}
 <div id="sidebar">
-                            <div id='mineralMenu'>
-                            <ul>
-                                <li class="has-sub mainitem"><a href="#">Select a mineral</a>
-                                <ul>
-                                       <li><a href='#mineralOne' name="mineralOne"><span>Mineral 1</span></a></li>
-                                       <li><a href='#mineralTwo' name="mineralTwo"><span>Mineral 2</span></a></li>
-                                       <li><a href='#mineralThree' name="mineralThree"><span>Mineral 3</span></a></li>
-                                       <li><a href='#mineralFour' name="mineralFour"><span>Mineral 4</span></a></li>
-                                       <li class="last"><a href='#mineralFive' name="mineralFive"><span>Mineral 5</span></a></li>
-                                </ul>
-                                </li>
-                            </ul>
-                            </div><!-- close MINERALMENU !-->
-                            <div id="mineralContainer">
-                                <div id="mineralOne" style="display:none">
-                                	<h1 class="subHeadings">Mineral name here</h1>
-                                	<h2 class="theoryHeadings">Physical properties</h2>
-                                    <p>Info about the mineral here</p>
-                                    <p>Info about the mineral here</p>
-                                    <p>Info about the mineral here</p>
-                                    <h2 class="theoryHeadings">Diagnostic features</h2>
-                                    <p>Info about the mineral here</p>
-                                    <p>Info about the mineral here</p>
-                                    <p>Info about the mineral here</p>
-                                    <h2 class="theoryHeadings">Geological significance</h2>
-                                    <p>Info about the mineral here</p>
-                                    <p>Info about the mineral here</p>
-                                    <p>Info about the mineral here</p>
-                                </div>
-                                <div id="mineralTwo" style="display:none">
-                                	<p>Info about mineral 2</p>
-                                </div>
-                                <div id="mineralThree" style="display:none">
-                                	<p>Info about mineral 3</p>
-                                </div>
-                                <div id="mineralFour" style="display:none">
-                                	<p>Info about mineral 4</p>
-                                </div>
-                                <div id="mineralFive" style="display:none">
-                                	<p>Info about mineral 5</p>
-                                </div>
-                            </div>
+    <div id='mineralMenu'>
+        <ul>
+            <li class="has-sub mainitem"><a href="#">Select a mineral</a>
+            <ul>
+                {% for sample in active_samples %}
+                    <li>{{  sample.name }}</li>
+                {% endfor %}
+            </ul>
+            </li>
+        </ul>
+    </div><!-- close MINERALMENU !-->
+    <div id="mineralContainer">
+        <div id="mineralOne" style="display:none">
+            <h1 class="subHeadings">Mineral name here</h1>
+            <h2 class="theoryHeadings">Physical properties</h2>
+            <p>Info about the mineral here</p>
+            <p>Info about the mineral here</p>
+            <p>Info about the mineral here</p>
+            <h2 class="theoryHeadings">Diagnostic features</h2>
+            <p>Info about the mineral here</p>
+            <p>Info about the mineral here</p>
+            <p>Info about the mineral here</p>
+            <h2 class="theoryHeadings">Geological significance</h2>
+            <p>Info about the mineral here</p>
+            <p>Info about the mineral here</p>
+            <p>Info about the mineral here</p>
         </div>
-        <div id="virtualObject">
+        <div id="mineralTwo" style="display:none">
+            <p>Info about mineral 2</p>
+        </div>
+        <div id="mineralThree" style="display:none">
+            <p>Info about mineral 3</p>
+        </div>
+        <div id="mineralFour" style="display:none">
+            <p>Info about mineral 4</p>
+        </div>
+        <div id="mineralFive" style="display:none">
+            <p>Info about mineral 5</p>
+        </div>
+    </div>
+</div>
 
-        	<img src="images/rock_example.jpeg" class="example" />
-        </div>
+<div id="virtualObject">
+    <img src="images/rock_example.jpeg" class="example" />
+</div>
 
 {% endblock %}

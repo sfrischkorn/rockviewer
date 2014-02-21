@@ -4,6 +4,8 @@ Define the views for the Django MVC
 
 from django import template
 from django.views import generic
+from itertools import chain
+from operator import attrgetter
 
 from three_d_viewer.models import Sample, Category, Mineral
 register = template.Library()
@@ -24,7 +26,21 @@ class HomeView(generic.ListView):
             filter(active=True).order_by('name')
         return context
 
+class MineralPracticeView(generic.ListView):
+    model = Sample
+    template_name = 'three_d_viewer/minerals_practice.html'
 
+    def get_context_data(self, **kwargs):
+        context = super(MineralPracticeView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Minerals')
+        #context['active_samples'] = cat.active_samples
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        return context
 
 class DetailView(generic.DetailView):
     """
