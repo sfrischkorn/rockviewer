@@ -234,7 +234,7 @@ body {
 
 #virtualObject {
 	width: 80%;
-	height: auto;
+	height: 100%;
 	float: right;
 }
 
