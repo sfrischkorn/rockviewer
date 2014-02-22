@@ -61,10 +61,11 @@ class Sample(CommonInfo):
 
     @property
     def url(self):
-        if isinstance(self, Mineral):
-            return 'three_d_viewer:mineral_detail'
-        else:
-            return 'three_d_viewer:detail'
+        return 'three_d_viewer:mineral_detail'
+        #if isinstance(self, Mineral):
+        #    return 'three_d_viewer:mineral_detail'
+        #else:
+        #    return 'three_d_viewer:detail'
 
 
 class Mineral(Sample):

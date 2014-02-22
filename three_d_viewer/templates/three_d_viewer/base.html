@@ -5,12 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>3DVOL - 3D Virtual Object Library</title>
+
+{% block includes %}
 <link href="{% static "three_d_viewer/css/styles.css" %}" rel="stylesheet" media="screen" />
 <script type="text/javascript" src="{% static "three_d_viewer/js/jquery.min.js" %}"></script>
-<script type='text/javascript' src="{% static "three_d_viewer/js/menu_jquery.js.js" %}"></script>
+<script type='text/javascript' src="{% static "three_d_viewer/js/menu_jquery.js" %}"></script>
+{% endblock %}
 </head>
 
-<body>
+<body onload={% block loadscript %}""{% endblock %}>
 <div id="wrapper">
 <div id="container">
 	<div id="header">

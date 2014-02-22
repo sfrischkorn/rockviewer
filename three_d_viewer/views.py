@@ -33,7 +33,6 @@ class MineralPracticeView(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super(MineralPracticeView, self).get_context_data(**kwargs)
         cat = Category.objects.get(name='Minerals')
-        #context['active_samples'] = cat.active_samples
         result = cat.active_samples
 
         for child in cat.active_children:
@@ -59,7 +58,7 @@ class DetailView(generic.DetailView):
             filter(active=True).order_by('name')
         return context
 
-class MineralDetailView(DetailView):
+class MineralDetailView(generic.DetailView):
     """
     Add extra functionality for mineral details
     """
@@ -70,9 +69,19 @@ class MineralDetailView(DetailView):
     parent_categories = Category.objects.filter(parent=None). \
         filter(active=True).order_by("name")
 
+    #def get_context_data(self, **kwargs):
+    #    context = super(MineralDetailView, self).get_context_data(**kwargs)
+    #    context['active_samples'] = Sample.objects.select_subclasses(Mineral).filter(active=True).order_by('name')
+    #    context['parent_categories'] = Category.objects.filter(parent=None). \
+    #        filter(active=True).order_by('name')
+    #    return context
     def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
-        context['active_samples'] = Sample.objects.select_subclasses(Mineral).filter(active=True).order_by('name')
-        context['parent_categories'] = Category.objects.filter(parent=None). \
-            filter(active=True).order_by('name')
+        context = super(MineralDetailView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Minerals')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
         return context
