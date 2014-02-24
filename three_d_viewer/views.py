@@ -27,7 +27,7 @@ class HomeView(generic.ListView):
         return context
 
 class MineralPracticeView(generic.ListView):
-    model = Sample
+    model = Mineral
     template_name = 'three_d_viewer/minerals_practice.html'
 
     def get_context_data(self, **kwargs):
@@ -41,23 +41,6 @@ class MineralPracticeView(generic.ListView):
         context['active_samples'] = sorted(result, key=attrgetter('name'))
         return context
 
-class DetailView(generic.DetailView):
-    """
-    Define the view to view the 3D model of a sample
-    """
-
-    model = Sample
-    template_name = 'three_d_viewer/detail.html'
-    parent_categories = Category.objects.filter(parent=None). \
-        filter(active=True).order_by("name")
-
-    def get_context_data(self, **kwargs):
-        context = super(DetailView, self).get_context_data(**kwargs)
-        context['active_samples'] = Sample.objects.select_subclasses(Mineral).filter(active=True).order_by('name')
-        context['parent_categories'] = Category.objects.filter(parent=None). \
-            filter(active=True).order_by('name')
-        return context
-
 class MineralDetailView(generic.DetailView):
     """
     Add extra functionality for mineral details
@@ -69,15 +52,85 @@ class MineralDetailView(generic.DetailView):
     parent_categories = Category.objects.filter(parent=None). \
         filter(active=True).order_by("name")
 
-    #def get_context_data(self, **kwargs):
-    #    context = super(MineralDetailView, self).get_context_data(**kwargs)
-    #    context['active_samples'] = Sample.objects.select_subclasses(Mineral).filter(active=True).order_by('name')
-    #    context['parent_categories'] = Category.objects.filter(parent=None). \
-    #        filter(active=True).order_by('name')
-    #    return context
     def get_context_data(self, **kwargs):
         context = super(MineralDetailView, self).get_context_data(**kwargs)
         cat = Category.objects.get(name='Minerals')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        return context
+
+class RockPracticeView(generic.ListView):
+    model = Sample
+    template_name = 'three_d_viewer/rock_practice.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+
+    def get_context_data(self, **kwargs):
+        context = super(RockPracticeView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Rocks')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        return context
+
+class RockDetailView(generic.DetailView):
+    model = Sample
+    template_name = 'three_d_viewer/rock_detail.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+
+    def get_context_data(self, **kwargs):
+        context = super(RockDetailView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Rocks')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        return context
+
+class FossilPracticeView(generic.ListView):
+    model = Sample
+    template_name = 'three_d_viewer/fossil_practice.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+
+    def get_context_data(self, **kwargs):
+        context = super(FossilPracticeView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Fossils')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        return context
+
+class FossilDetailView(generic.DetailView):
+    model = Sample
+    template_name = 'three_d_viewer/fossil_detail.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+
+    def get_context_data(self, **kwargs):
+        context = super(FossilDetailView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Fossils')
         result = cat.active_samples
 
         for child in cat.active_children:

@@ -1,0 +1,35 @@
+{% extends "three_d_viewer/sample_detail.html" %}
+
+{% block load %}
+function load(){
+  window.addEventListener('resize', resizeCanvas, false);
+  resizeCanvas();
+
+  var sampleFilename = '{{ sample.model_filename|escapejs }}';
+
+  if (sampleFilename.trim() == "")
+  {
+    document.getElementById("progress").innerHTML = "No model defined!";
+    return;
+  }
+
+  request = new XMLHttpRequest();
+  request.open("GET", '{{ MEDIA_URL }}' + sampleFilename, true);
+  request.overrideMimeType("text/plain; charset=x-user-defined");
+  request.onreadystatechange = function(){
+    if (this.readyState == 3 || this.readyState == 4){
+      document.getElementById("progress").innerHTML = "Downloading... "
+        + formatNumber(this.responseText.length / 1048576, 2) + " MB";
+    }
+    if (this.readyState == 4 && (this.status == 200 || this.status == 0) ){
+      document.getElementById("progress").innerHTML = "Unpacking...";
+      setTimeout(loaded, 1);
+    }
+  }
+  request.send();
+}
+{% endblock load %}
+
+{%  block menu_header %}Select a rock{%  endblock %}
+
+

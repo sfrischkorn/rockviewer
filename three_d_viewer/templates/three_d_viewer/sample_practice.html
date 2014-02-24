@@ -1,0 +1,23 @@
+{% extends "three_d_viewer/base.html" %}
+
+{% block content %}
+<div id="sidebar">
+    <div id='mineralMenu'>
+        <ul>
+            <li class="has-sub mainitem"><a href="#">{%  block menu_header %}Select a sample{%  endblock %}</a>
+            <ul>
+                {% for sample in active_samples %}
+                    <li><a href={% url sample.url sample.id %}>{{ sample.name }}</a></li>
+                {% endfor %}
+            </ul>
+            </li>
+        </ul>
+    </div><!-- close MINERALMENU !-->
+    {% block sample_detail %}
+    {% endblock %}
+</div>
+
+{% block 3dcontent %}
+{%  endblock %}
+
+{% endblock %}

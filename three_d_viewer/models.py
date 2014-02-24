@@ -59,30 +59,43 @@ class Sample(CommonInfo):
     #Use the inheritance manager for handling subclasses
     objects = InheritanceManager()
 
+    def GetTopParent(self, current_parent):
+        if current_parent.parent is None:
+            return current_parent
+        else:
+            return self.GetTopParent(current_parent.parent)
+
     @property
     def url(self):
-        return 'three_d_viewer:mineral_detail'
-        #if isinstance(self, Mineral):
-        #    return 'three_d_viewer:mineral_detail'
-        #else:
-        #    return 'three_d_viewer:detail'
+        cat = self.GetTopParent(self.parent)
+
+        if cat.name == 'Fossils':
+            return 'three_d_viewer:fossil_detail'
+        elif cat.name == 'Rocks':
+            return 'three_d_viewer:rock_detail'
+        else:
+            return 'three_d_viewer:sample_detail'
 
 
 class Mineral(Sample):
-	"""
-	Extending the Sample class to add details specific to minerals
-	"""
-	chemical_formula = models.CharField(max_length=100, blank=True)
-	hardness = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
-	specific_gravity = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
-	cleavage_fracture = models.CharField(max_length=100, blank=True)
-	lustre = models.CharField(max_length=100, blank=True)
-	colour = models.CharField(max_length=100, blank=True)
-	streak = models.CharField(max_length=100, blank=True)
-	habit = models.CharField(max_length=1000, blank=True)
-	crystallography = models.CharField(max_length=100, blank=True)
-	identifying_features = models.CharField(max_length=1000, blank=True)
-	occurance = models.CharField(max_length=1000, blank=True)
+    """
+    Extending the Sample class to add details specific to minerals
+    """
+    chemical_formula = models.CharField(max_length=100, blank=True)
+    hardness = models.DecimalField(max_digits=3, decimal_places=2, blank=True, null=True)
+    specific_gravity = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True)
+    cleavage_fracture = models.CharField(max_length=100, blank=True)
+    lustre = models.CharField(max_length=100, blank=True)
+    colour = models.CharField(max_length=100, blank=True)
+    streak = models.CharField(max_length=100, blank=True)
+    habit = models.CharField(max_length=1000, blank=True)
+    crystallography = models.CharField(max_length=100, blank=True)
+    identifying_features = models.CharField(max_length=1000, blank=True)
+    occurance = models.CharField(max_length=1000, blank=True)
+
+    @property
+    def url(self):
+        return 'three_d_viewer:mineral_detail'
 
 
 class Question(models.Model):
