@@ -7,7 +7,7 @@ from django.views import generic
 from itertools import chain
 from operator import attrgetter
 
-from three_d_viewer.models import Sample, Category, Mineral
+from three_d_viewer.models import Sample, Category, Mineral, GlossaryEntry
 register = template.Library()
 
 
@@ -138,3 +138,12 @@ class FossilDetailView(generic.DetailView):
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
         return context
+	
+class GlossaryView(generic.ListView):
+	model = GlossaryEntry
+	template_name = 'three_d_viewer/glossary.html'
+	
+	def get_context_data(self, **kwargs):
+	    context = super(GlossaryView, self).get_context_data(**kwargs)
+	    context['entries'] = GlossaryEntry.objects.all()
+	    return context

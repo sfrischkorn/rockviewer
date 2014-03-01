@@ -26,11 +26,11 @@
                <li class='active mainitem'><a href="{% url 'three_d_viewer:home' %}"><span>Home</span></a></li>
                <li class='has-sub mainitem'><a href='#'><span>Minerals</span></a>
                   <ul>
-                     <li class='has-sub'><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Theory</span></a>
+                     <li class='has-sub'><a><span>Theory</span></a>
                         <ul>
-                           <li><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Structure of Earth</span></a></li>
-                           <li><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Pressure and temperature</span></a></li>
-                           <li class='last'><a href="{% url 'three_d_viewer:minerals_theory' %}"><span>Bowen's reaction series</span></a></li>
+                           <li><a href="{% url 'three_d_viewer:theory_structure' %}"><span>Structure of Earth</span></a></li>
+                           <li><a href="{% url 'three_d_viewer:theory_pt' %}"><span>Pressure and temperature</span></a></li>
+                           <li class='last'><a href="{% url 'three_d_viewer:theory_bowen' %}"><span>Bowen's reaction series</span></a></li>
                         </ul>
                      </li>
                      <li><a href="{% url 'three_d_viewer:minerals_practice' %}"><span>Practice</span></a></li>
@@ -52,9 +52,9 @@
 </div><!-- CLOSE WRAPPER !-->
 <div id="footer">
 <ul>
-	<li><a href="#">Glossary</a></li>
+	<li><a href="{% url 'three_d_viewer:glossary' %}">Glossary</a></li>
     <li>&nbsp; - &nbsp;</li>
-    <li><a href="#">Acknowledgements</a></li>
+    <li><a href="{% url 'three_d_viewer:acknowledgements' %}">Acknowledgements</a></li>
 </ul>
 </div><!-- CLOSE FOOTER !-->
 </body>

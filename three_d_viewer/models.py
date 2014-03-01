@@ -43,6 +43,9 @@ class Category(CommonInfo):
     def active_samples(self):
         return self.samples.select_subclasses(Sample, Mineral).filter(active=True).order_by('name')
 
+    class Meta:
+	    verbose_name_plural = "Categories"
+
 
 class Sample(CommonInfo):
     """
@@ -135,3 +138,16 @@ class Answer(models.Model):
 
     def __unicode__(self):
         return self.text
+
+class GlossaryEntry(models.Model):
+	"""
+	A glossary entry
+	"""
+	name = models.CharField(max_length=200)
+	definition = models.CharField(max_length=2000)
+	
+	def __unicode__(self):
+		return self.name
+	
+	class Meta:
+	    verbose_name_plural = "Glossary Entries"
