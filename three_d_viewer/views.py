@@ -63,6 +63,12 @@ class MineralDetailView(generic.DetailView):
         context['active_samples'] = sorted(result, key=attrgetter('name'))
         return context
 
+    def get_object(self, queryset=None):
+        object = super(MineralDetailView, self).get_object()
+        object.viewed_count += 1
+        object.save()
+        return object
+
 class RockPracticeView(generic.ListView):
     model = Sample
     template_name = 'three_d_viewer/rock_practice.html'
@@ -101,6 +107,12 @@ class RockDetailView(generic.DetailView):
         context['active_samples'] = sorted(result, key=attrgetter('name'))
         return context
 
+    def get_object(self, queryset=None):
+        object = super(RockDetailView, self).get_object()
+        object.viewed_count += 1
+        object.save()
+        return object
+
 class FossilPracticeView(generic.ListView):
     model = Sample
     template_name = 'three_d_viewer/fossil_practice.html'
@@ -138,6 +150,12 @@ class FossilDetailView(generic.DetailView):
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
         return context
+
+    def get_object(self, queryset=None):
+        object = super(FossilDetailView, self).get_object()
+        object.viewed_count += 1
+        object.save()
+        return object
 	
 class GlossaryView(generic.ListView):
 	model = GlossaryEntry
@@ -145,5 +163,5 @@ class GlossaryView(generic.ListView):
 	
 	def get_context_data(self, **kwargs):
 	    context = super(GlossaryView, self).get_context_data(**kwargs)
-	    context['entries'] = GlossaryEntry.objects.all()
+	    context['entries'] = GlossaryEntry.objects.all().order_by("name")
 	    return context

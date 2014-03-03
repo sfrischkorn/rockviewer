@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56ba8ed1-8d88-44b6-a1d9-9818bc65c9ae" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_practice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_practice.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_detail.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_practice.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/mineral_detail.html" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/mineral_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_practice.html" afterPath="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_practice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/three_d_viewer/models.py" afterPath="$PROJECT_DIR$/three_d_viewer/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/rockviewer.iml" afterPath="$PROJECT_DIR$/.idea/rockviewer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/three_d_viewer/urls.py" afterPath="$PROJECT_DIR$/three_d_viewer/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/three_d_viewer/views.py" afterPath="$PROJECT_DIR$/three_d_viewer/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="rockviewer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,41 +28,10 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="sample_practice.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_practice.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="107" selection-start="174" selection-end="228" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="476">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="minerals_selftest.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_selftest.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="323">
-                  <folding>
-                    <marker date="1393199109031" expanded="true" signature="117:456" placeholder="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sample_detail.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_detail.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="74" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="-48.384617" vertical-offset="0" max-vertical-offset="6987">
-                  <folding>
-                    <element signature="e#10953#10971#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="rock_practice.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_practice.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="51" selection-start="104" selection-end="104" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+                <state line="2" column="51" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
                   <folding />
                 </state>
               </provider>
@@ -86,7 +40,7 @@
           <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="40" column="80" selection-start="2035" selection-end="2035" vertical-scroll-proportion="-18.0" vertical-offset="212" max-vertical-offset="1122">
+                <state line="40" column="80" selection-start="2014" selection-end="2014" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1122">
                   <folding />
                 </state>
               </provider>
@@ -95,7 +49,7 @@
           <file leaf-file-name="mineral_detail.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/mineral_detail.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="40" selection-start="1034" selection-end="1034" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="1445">
+                <state line="32" column="40" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1445">
                   <folding />
                 </state>
               </provider>
@@ -104,25 +58,34 @@
           <file leaf-file-name="rock_detail.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_detail.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="697">
+                <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="697">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="132" column="48" selection-start="4307" selection-end="4307" vertical-scroll-proportion="0.0" vertical-offset="845" max-vertical-offset="2380">
+                <state line="127" column="0" selection-start="4083" selection-end="4083" vertical-scroll-proportion="0.66630554" vertical-offset="1459" max-vertical-offset="2856">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="models.py" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="detail.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://C:/Envs/rockviewer/Lib/site-packages/django/views/generic/detail.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="109" column="0" selection-start="3875" selection-end="3875" vertical-scroll-proportion="0.0" vertical-offset="1478" max-vertical-offset="2941">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="models.py" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="76" column="48" selection-start="2316" selection-end="2316" vertical-scroll-proportion="1.0130011" vertical-offset="357" max-vertical-offset="2431">
+                <state line="103" column="0" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.0" vertical-offset="764" max-vertical-offset="2771">
                   <folding>
                     <element signature="e#62#90#0" expanded="true" />
                   </folding>
@@ -130,10 +93,28 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="base.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://C:/Envs/rockviewer/Lib/site-packages/django/template/base.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="781" column="0" selection-start="28536" selection-end="28536" vertical-scroll-proportion="0.0" vertical-offset="12630" max-vertical-offset="22423">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="__init__.py" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://C:/Envs/rockviewer/Lib/site-packages/django/conf/__init__.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="150" column="0" selection-start="5942" selection-end="5942" vertical-scroll-proportion="0.0" vertical-offset="2094" max-vertical-offset="3281">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="fossil_practice.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_practice.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="2" column="39" selection-start="92" selection-end="92" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+                <state line="2" column="39" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
                   <folding />
                 </state>
               </provider>
@@ -146,7 +127,7 @@
           <file leaf-file-name="urls.py" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/urls.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="15" column="79" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.21911922" vertical-offset="0" max-vertical-offset="931">
+                <state line="20" column="71" selection-start="1703" selection-end="1703" vertical-scroll-proportion="0.3104189" vertical-offset="0" max-vertical-offset="931">
                   <folding />
                 </state>
               </provider>
@@ -155,7 +136,7 @@
           <file leaf-file-name="fossil_detail.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_detail.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="32" column="39" selection-start="1032" selection-end="1032" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="697">
+                <state line="32" column="39" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="697">
                   <folding />
                 </state>
               </provider>
@@ -191,11 +172,11 @@
         <option value="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_detail.html" />
         <option value="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_detail.html" />
         <option value="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/mineral_detail.html" />
-        <option value="$PROJECT_DIR$/three_d_viewer/views.py" />
-        <option value="$PROJECT_DIR$/three_d_viewer/urls.py" />
         <option value="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_detail.html" />
         <option value="$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html" />
         <option value="$PROJECT_DIR$/three_d_viewer/models.py" />
+        <option value="$PROJECT_DIR$/three_d_viewer/urls.py" />
+        <option value="$PROJECT_DIR$/three_d_viewer/views.py" />
       </list>
     </option>
   </component>
@@ -231,7 +212,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,10 +261,6 @@
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -296,41 +272,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Old" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rockviewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rockviewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -348,15 +290,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,7 +304,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="three_d_viewer" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -380,6 +314,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -392,6 +327,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="restartRequiresConfirmation" value="true" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -494,7 +430,27 @@
       <option name="PARAMETERS" value="" />
       <method />
     </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="rockviewer" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -520,27 +476,7 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.DjangoServer" factoryName="Django server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="rockviewer" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
-      <option name="host" value="" />
-      <option name="additionalOptions" value="" />
-      <option name="browserUrl" value="" />
-      <option name="runTestServer" value="false" />
-      <option name="runNoReload" value="false" />
-      <option name="useCustomRunCommand" value="false" />
-      <option name="customRunCommand" value="" />
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -594,9 +530,9 @@
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="settings" />
+        <env name="DJANGO_SETTINGS_MODULE" value="settings.dev" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="C:/Envs/rockviewer/Scripts/python.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -658,27 +594,27 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1576" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32944608" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2609375" sideWeight="0.6705539" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2609375" sideWeight="0.6705539" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39889196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32825485" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32825485" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -700,10 +636,103 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="15" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/three_d_viewer/models.py</url>
+          <line>75</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_practice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="107" selection-start="174" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_selftest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="6987">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_practice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="51" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="80" selection-start="2035" selection-end="2035" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1122">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/mineral_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="40" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1445">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="48" selection-start="4307" selection-end="4307" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="2465">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="33" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.0" vertical-offset="1292" max-vertical-offset="2499">
+          <folding>
+            <element signature="e#62#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_practice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="39" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="79" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="39" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="697">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/Old/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="16" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1241">
@@ -713,16 +742,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/Old/mineral_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="23" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1496">
-          <folding />
-        </state>
+        <state line="62" column="23" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="1054" max-vertical-offset="1496" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="2040">
-          <folding />
-        </state>
+        <state line="19" column="0" selection-start="485" selection-end="485" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="2040" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/Old/detail.html">
@@ -734,9 +759,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/prototype/3dvol/revised/minerals_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="63" selection-start="4901" selection-end="4916" vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2040">
-          <folding />
-        </state>
+        <state line="96" column="63" selection-start="4901" selection-end="4916" vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2040" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html">
@@ -793,9 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/docs/prototype/3dvol/revised/minerals_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="63" selection-start="4901" selection-end="4916" vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1800">
-          <folding />
-        </state>
+        <state line="96" column="63" selection-start="4901" selection-end="4916" vertical-scroll-proportion="0.0" vertical-offset="1001" max-vertical-offset="1800" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/Old/base.html">
@@ -814,24 +835,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/Old/mineral_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="23" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1320">
-          <folding />
-        </state>
+        <state line="62" column="23" selection-start="1779" selection-end="1779" vertical-scroll-proportion="0.0" vertical-offset="930" max-vertical-offset="1320" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="46" selection-start="99" selection-end="99" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
-          <folding />
-        </state>
+        <state line="2" column="46" selection-start="99" selection-end="99" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/minerals_selftest.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="944">
-          <folding>
-            <marker date="1393199109031" expanded="true" signature="117:456" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -844,82 +859,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="107" selection-start="174" selection-end="228" vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="476">
+        <state line="6" column="107" selection-start="174" selection-end="228" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="476">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/sample_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="-48.384617" vertical-offset="0" max-vertical-offset="6987">
-          <folding>
-            <element signature="e#10953#10971#0" expanded="true" />
-          </folding>
+        <state line="74" column="0" selection-start="1859" selection-end="1859" vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="6987">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/mineral_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="40" selection-start="1034" selection-end="1034" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="1445">
+        <state line="32" column="40" selection-start="1034" selection-end="1034" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1445">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="80" selection-start="2035" selection-end="2035" vertical-scroll-proportion="-18.0" vertical-offset="212" max-vertical-offset="1122">
+        <state line="40" column="80" selection-start="2014" selection-end="2014" vertical-scroll-proportion="0.0" vertical-offset="212" max-vertical-offset="1122">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="39" selection-start="1032" selection-end="1032" vertical-scroll-proportion="-20.923077" vertical-offset="0" max-vertical-offset="697">
+        <state line="32" column="39" selection-start="1032" selection-end="1032" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/fossil_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="39" selection-start="92" selection-end="92" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+        <state line="2" column="39" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="-1.9615384" vertical-offset="0" max-vertical-offset="697">
+        <state line="3" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="697">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/templates/three_d_viewer/rock_practice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="51" selection-start="104" selection-end="104" vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="136">
+        <state line="2" column="51" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="136">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="79" selection-start="1112" selection-end="1112" vertical-scroll-proportion="0.21911922" vertical-offset="0" max-vertical-offset="931">
+        <state line="20" column="71" selection-start="1703" selection-end="1703" vertical-scroll-proportion="0.3104189" vertical-offset="0" max-vertical-offset="931">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/three_d_viewer/views.py">
+    <entry file="file://C:/Envs/rockviewer/Lib/site-packages/django/conf/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="48" selection-start="4307" selection-end="4307" vertical-scroll-proportion="0.0" vertical-offset="1457" max-vertical-offset="2380">
+        <state line="150" column="0" selection-start="5942" selection-end="5942" vertical-scroll-proportion="0.0" vertical-offset="2094" max-vertical-offset="3281">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Envs/rockviewer/Lib/site-packages/django/template/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="781" column="0" selection-start="28536" selection-end="28536" vertical-scroll-proportion="0.0" vertical-offset="12630" max-vertical-offset="22423">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/three_d_viewer/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="48" selection-start="2316" selection-end="2316" vertical-scroll-proportion="1.0130011" vertical-offset="357" max-vertical-offset="2431">
+        <state line="103" column="0" selection-start="3358" selection-end="3358" vertical-scroll-proportion="0.0" vertical-offset="764" max-vertical-offset="2771">
           <folding>
             <element signature="e#62#90#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Envs/rockviewer/Lib/site-packages/django/views/generic/detail.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="0" selection-start="3875" selection-end="3875" vertical-scroll-proportion="0.0" vertical-offset="1478" max-vertical-offset="2941">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/three_d_viewer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="0" selection-start="4083" selection-end="4083" vertical-scroll-proportion="0.66630554" vertical-offset="1459" max-vertical-offset="2856">
+          <folding />
         </state>
       </provider>
     </entry>
