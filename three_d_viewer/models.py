@@ -58,6 +58,7 @@ class Sample(CommonInfo):
     parent = models.ForeignKey(Category, blank=True, null=True,
                                on_delete=models.SET_NULL,
                                related_name="samples")
+    viewed_count = models.IntegerField(default=0)
 
     #Use the inheritance manager for handling subclasses
     objects = InheritanceManager()
@@ -71,6 +72,8 @@ class Sample(CommonInfo):
     @property
     def url(self):
         cat = self.GetTopParent(self.parent)
+
+        self.viewed_count += 1
 
         if cat.name == 'Fossils':
             return 'three_d_viewer:fossil_detail'
@@ -98,6 +101,7 @@ class Mineral(Sample):
 
     @property
     def url(self):
+        self.viewed_count += 1
         return 'three_d_viewer:mineral_detail'
 
 

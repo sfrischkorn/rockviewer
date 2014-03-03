@@ -2,3 +2,5 @@
 .DS_Store
 .spyderproject
 reports/
+.idea/workspace.xml
+.idea/rockviewer.iml
