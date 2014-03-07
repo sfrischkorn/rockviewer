@@ -1,13 +1,13 @@
 {% extends "three_d_viewer/base.html" %}
 
 {% block content %}
-    <div id="pushDown"></div>
+    <div id="pushDownTwo"></div>
     <div id="mainText">
-        <p><h3>Glossary</h3><br><br>
+        <p><h3 class="headings">Glossary</h3><br><br>
 	<table>
 	{% for entry in entries %}
 		<tr>
-			<td><p>{{ entry.name }}</p></td>
+			<td class="term"><p>{{ entry.name }}</p></td>
 			<td><p>{{ entry.definition }}</p></td>
 		</tr>
 	{% endfor %}

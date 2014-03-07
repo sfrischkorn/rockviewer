@@ -7,7 +7,6 @@ urlpatterns = patterns(
     '',
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^$', generic.TemplateView.as_view(template_name="three_d_viewer/home.html"), name='home'),
-    url(r'^minerals_theory/$', generic.TemplateView.as_view(template_name="three_d_viewer/minerals_theory.html"), name='minerals_theory'),
     url(r'^theory/structure/$', generic.TemplateView.as_view(template_name="three_d_viewer/theory/structure.html"), name='theory_structure'),
     url(r'^theory/bowen/$', generic.TemplateView.as_view(template_name="three_d_viewer/theory/bowen.html"), name='theory_bowen'),
     url(r'^theory/pressure_temp/$', generic.TemplateView.as_view(template_name="three_d_viewer/theory/pressure_temp.html"), name='theory_pt'),
