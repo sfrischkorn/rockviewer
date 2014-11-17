@@ -385,7 +385,7 @@ img.example {
   padding: 0;
 }
 #cssmenu > ul > li.mainitem {             /*CUSTOM CLASS TEST*/
-  width: 25%;
+  width: 20%;
 }
 #cssmenu > ul > #menu-button {
   display: none;

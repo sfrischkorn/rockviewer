@@ -19,6 +19,10 @@ urlpatterns = patterns(
     url(r'^fossils/(?P<pk>\d+)/$', views.FossilDetailView.as_view(), name='fossil_detail'),
     url(r'^glossary/$', views.GlossaryView.as_view(), name='glossary'),
     url(r'^acknowledgements/$', generic.TemplateView.as_view(template_name='three_d_viewer/acknowledgements.html'), name='acknowledgements'),
+    url(r'^erb101/$', views.ERB101HomeView.as_view(), name='erb101_home'),
+    url(r'^erb101/$', generic.TemplateView.as_view(template_name="three_d_viewer/erb101/home.html"), name='erb101_home'),
+    url(r'^erb101_rock_practice/$', views.ERB101RockPracticeView.as_view(), name='erb101_rocks_practice'),
+    url(r'^erb101_minerals_practice/$', views.ERB101MineralPracticeView.as_view(), name='erb101_minerals_practice'),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT}),
 )

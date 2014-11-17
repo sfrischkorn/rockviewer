@@ -1,0 +1,17 @@
+{% extends "three_d_viewer/base.html" %}
+
+{% block home %}
+<li class='active mainitem'><a href="{% url 'three_d_viewer:erb101_home' %}"><span>ERB101 Home</span></a></li>
+{% endblock %}
+
+{% block mineral_practice %}
+<li><a href="{% url 'three_d_viewer:erb101_minerals_practice' %}"><span>Practice</span></a></li>
+{% endblock %}
+
+
+{% block rock_practice %}
+<li class="mainitem"><a href="{%  url 'three_d_viewer:erb101_rocks_practice' %}"><span>Rocks</span></a></li>
+{% endblock %}
+
+{% block fossil_menu %}
+{% endblock %}

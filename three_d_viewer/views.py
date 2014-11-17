@@ -86,6 +86,7 @@ class RockPracticeView(generic.ListView):
             result = chain(result, child.active_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/base.html'
         return context
 
 class RockDetailView(generic.DetailView):
@@ -105,6 +106,7 @@ class RockDetailView(generic.DetailView):
             result = chain(result, child.active_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/base.html'
         return context
 
     def get_object(self, queryset=None):
@@ -165,3 +167,54 @@ class GlossaryView(generic.ListView):
 	    context = super(GlossaryView, self).get_context_data(**kwargs)
 	    context['entries'] = GlossaryEntry.objects.all().order_by("name")
 	    return context
+        
+class ERB101HomeView(generic.ListView):
+    """
+    Show the home page
+    """
+
+    template_name = 'three_d_viewer/erb101/home.html'
+    model = Sample
+
+    def get_context_data(self, **kwargs):
+        context = super(ERB101HomeView, self).get_context_data(**kwargs)
+        context['active_samples'] = Sample.objects.select_subclasses(Mineral).filter(active=True).filter(erb101_sample=True).order_by('name')
+        context['parent_categories'] = Category.objects.filter(parent=None). \
+            filter(active=True).order_by('name')
+        return context  
+
+class ERB101MineralPracticeView(generic.ListView):
+    model = Mineral
+    template_name = 'three_d_viewer/minerals_practice.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(ERB101MineralPracticeView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Minerals')
+        result = cat.active_101_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_101_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        return context
+        
+class ERB101RockPracticeView(generic.ListView):
+    model = Sample
+    template_name = 'three_d_viewer/rock_practice.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+
+    def get_context_data(self, **kwargs):
+        context = super(ERB101RockPracticeView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Rocks')
+        result = cat.active_101_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_101_samples)
+        
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/erb101/base.html'
+        return context
+        

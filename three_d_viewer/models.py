@@ -42,6 +42,10 @@ class Category(CommonInfo):
     @property
     def active_samples(self):
         return self.samples.select_subclasses(Sample, Mineral).filter(active=True).order_by('name')
+        
+    @property
+    def active_101_samples(self):
+        return self.samples.select_subclasses(Sample, Mineral).filter(active=True).filter(erb101_sample=True).order_by('name')
 
     class Meta:
 	    verbose_name_plural = "Categories"
@@ -59,6 +63,7 @@ class Sample(CommonInfo):
                                on_delete=models.SET_NULL,
                                related_name="samples")
     viewed_count = models.IntegerField(default=0)
+    erb101_sample = models.BooleanField(default=False)
 
     #Use the inheritance manager for handling subclasses
     objects = InheritanceManager()

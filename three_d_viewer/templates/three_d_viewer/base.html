@@ -18,12 +18,15 @@
 <div id="container">
 	<div id="header">
         <div id="logo">
-		<img src={% static "three_d_viewer/images/logo_main.png" %} class="logoImage">
+		<a href="{% url 'three_d_viewer:home' %}"><img src={% static "three_d_viewer/images/logo_main.png" %} class="logoImage"></a>
         </div><!-- CLOSE LOGO !-->
     	<div id="menuContainer">
             <div id='cssmenu'>
             <ul>
+               {% block home %}
                <li class='active mainitem'><a href="{% url 'three_d_viewer:home' %}"><span>Home</span></a></li>
+               <li class='active mainitem'><a href="{% url 'three_d_viewer:erb101_home' %}"><span>ERB101</span></a></li>
+               {% endblock %}
                <li class='has-sub mainitem'><a href='#'><span>Minerals</span></a>
                   <ul>
                      <li class='has-sub'><a><span>Theory</span></a>
@@ -33,12 +36,12 @@
                            <li class='last'><a href="{% url 'three_d_viewer:theory_bowen' %}"><span>Bowen's reaction series</span></a></li>
                         </ul>
                      </li>
-                     <li><a href="{% url 'three_d_viewer:minerals_practice' %}"><span>Practice</span></a></li>
+                     {% block mineral_practice %}<li><a href="{% url 'three_d_viewer:minerals_practice' %}"><span>Practice</span></a></li>{% endblock %}
                      <!--<li class='last'><a href="{% url 'three_d_viewer:minerals_selftest' %}"><span>Self Test</span></a></li>!-->
                   </ul>
                </li>
-               <li class="mainitem"><a href="{%  url 'three_d_viewer:rocks_practice' %}"><span>Rocks</span></a></li>
-               <li class='last mainitem'><a href="{%  url 'three_d_viewer:fossil_practice' %}"><span>Fossils</span></a></li>
+               {% block rock_practice %}<li class="mainitem"><a href="{%  url 'three_d_viewer:rocks_practice' %}"><span>Rocks</span></a></li>{% endblock %}
+               {% block fossil_menu %}<li class='last mainitem'><a href="{%  url 'three_d_viewer:fossil_practice' %}"><span>Fossils</span></a></li>{% endblock %}
             </ul>
             </div><!-- CLOSE CSSMENU !-->
     </div><!-- CLOSE MENUCONTAINER !-->
