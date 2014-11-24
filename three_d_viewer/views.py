@@ -39,6 +39,7 @@ class MineralPracticeView(generic.ListView):
             result = chain(result, child.active_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/base.html'
         return context
 
 class MineralDetailView(generic.DetailView):
@@ -61,6 +62,7 @@ class MineralDetailView(generic.DetailView):
             result = chain(result, child.active_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/base.html'
         return context
 
     def get_object(self, queryset=None):
@@ -132,6 +134,7 @@ class FossilPracticeView(generic.ListView):
             result = chain(result, child.active_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/base.html'
         return context
 
 class FossilDetailView(generic.DetailView):
@@ -151,6 +154,7 @@ class FossilDetailView(generic.DetailView):
             result = chain(result, child.active_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/base.html'
         return context
 
     def get_object(self, queryset=None):
@@ -185,7 +189,7 @@ class ERB101HomeView(generic.ListView):
 
 class ERB101MineralPracticeView(generic.ListView):
     model = Mineral
-    template_name = 'three_d_viewer/minerals_practice.html'
+    template_name = 'three_d_viewer/erb101/minerals_practice.html'
 
     def get_context_data(self, **kwargs):
         context = super(ERB101MineralPracticeView, self).get_context_data(**kwargs)
@@ -196,11 +200,41 @@ class ERB101MineralPracticeView(generic.ListView):
             result = chain(result, child.active_101_samples)
 
         context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/erb101/base.html'
         return context
+        
+class ERB101MineralDetailView(generic.DetailView):
+    """
+    Add extra functionality for mineral details
+    """
+
+    model = Mineral
+    template_name = 'three_d_viewer/erb101/mineral_detail.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+    def get_context_data(self, **kwargs):
+        context = super(ERB101MineralDetailView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Minerals')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/erb101/base.html'
+        return context
+
+    def get_object(self, queryset=None):
+        object = super(ERB101MineralDetailView, self).get_object()
+        object.viewed_count += 1
+        object.save()
+        return object     
         
 class ERB101RockPracticeView(generic.ListView):
     model = Sample
-    template_name = 'three_d_viewer/rock_practice.html'
+    template_name = 'three_d_viewer/erb101/rock_practice.html'
 
     parent_categories = Category.objects.filter(parent=None). \
         filter(active=True).order_by("name")
@@ -218,3 +252,41 @@ class ERB101RockPracticeView(generic.ListView):
         context['base_template'] = 'three_d_viewer/erb101/base.html'
         return context
         
+        
+class ERB101RockDetailView(generic.DetailView):
+    model = Sample
+    template_name = 'three_d_viewer/erb101/rock_detail.html'
+
+    parent_categories = Category.objects.filter(parent=None). \
+        filter(active=True).order_by("name")
+
+
+    def get_context_data(self, **kwargs):
+        context = super(ERB101RockDetailView, self).get_context_data(**kwargs)
+        cat = Category.objects.get(name='Rocks')
+        result = cat.active_samples
+
+        for child in cat.active_children:
+            result = chain(result, child.active_samples)
+
+        context['active_samples'] = sorted(result, key=attrgetter('name'))
+        context['base_template'] = 'three_d_viewer/erb101/base.html'
+        return context
+
+    def get_object(self, queryset=None):
+        object = super(ERB101RockDetailView, self).get_object()
+        object.viewed_count += 1
+        object.save()
+        return object
+        
+class TheoryTemplateView(generic.TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super(TheoryTemplateView, self).get_context_data(**kwargs)
+        context['base_template'] = 'three_d_viewer/base.html'
+        return context
+ 
+class ERB101TheoryTemplateView(generic.TemplateView):
+    def get_context_data(self, **kwargs):
+        context = super(ERB101TheoryTemplateView, self).get_context_data(**kwargs)
+        context['base_template'] = 'three_d_viewer/erb101/base.html'
+        return context

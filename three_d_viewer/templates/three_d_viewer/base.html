@@ -31,9 +31,11 @@
                   <ul>
                      <li class='has-sub'><a><span>Theory</span></a>
                         <ul>
+                           {% block theory %}
                            <li><a href="{% url 'three_d_viewer:theory_structure' %}"><span>Structure of Earth</span></a></li>
                            <li><a href="{% url 'three_d_viewer:theory_pt' %}"><span>Pressure and temperature</span></a></li>
                            <li class='last'><a href="{% url 'three_d_viewer:theory_bowen' %}"><span>Bowen's reaction series</span></a></li>
+                           {% endblock %}
                         </ul>
                      </li>
                      {% block mineral_practice %}<li><a href="{% url 'three_d_viewer:minerals_practice' %}"><span>Practice</span></a></li>{% endblock %}

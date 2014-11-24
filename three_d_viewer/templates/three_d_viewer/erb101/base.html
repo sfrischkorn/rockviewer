@@ -15,3 +15,13 @@
 
 {% block fossil_menu %}
 {% endblock %}
+
+{% block theory %}
+<li><a href="{% url 'three_d_viewer:erb101_theory_structure' %}"><span>Structure of Earth</span></a></li>
+<li><a href="{% url 'three_d_viewer:erb101_theory_pt' %}"><span>Pressure and temperature</span></a></li>
+<li class='last'><a href="{% url 'three_d_viewer:erb101_theory_bowen' %}"><span>Bowen's reaction series</span></a></li>
+{% endblock %}
+
+<script type="text/javascript">
+alert("Hello world");
+</script>

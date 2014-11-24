@@ -81,11 +81,11 @@ class Sample(CommonInfo):
         self.viewed_count += 1
 
         if cat.name == 'Fossils':
-            return 'three_d_viewer:fossil_detail'
+            return 'fossil_detail'
         elif cat.name == 'Rocks':
-            return 'three_d_viewer:rock_detail'
+            return 'rock_detail'
         else:
-            return 'three_d_viewer:sample_detail'
+            return 'sample_detail'
 
 
 class Mineral(Sample):
@@ -107,7 +107,7 @@ class Mineral(Sample):
     @property
     def url(self):
         self.viewed_count += 1
-        return 'three_d_viewer:mineral_detail'
+        return 'mineral_detail'
 
 
 class Question(models.Model):
