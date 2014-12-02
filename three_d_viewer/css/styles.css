@@ -133,10 +133,15 @@ body {
 }
 
 #footer {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: block;
+	position: fixed;
 	width: 100%;
-	margin-left: auto;
+	/*margin-left: auto;*/
 	background-color: #CCCCCC;
-	z-index: 900;
+	z-index: 1000;
 }
 
 #footer ul {
@@ -197,11 +202,16 @@ body {
 }
 
 #logo {
-	width: 10%;
+	width: 20%;
 	height: 44px;
-	background-color: #FFFFFF;
-	text-align: center;
+	background-color: #CCCCCC;
+	text-align: left;
 	float: left;
+}
+
+.logoImage {
+	width: auto;
+	height: 44px;
 }
 
 #logo p {
@@ -270,9 +280,27 @@ body {
 }
 
 
+
 /* TEXT STYLES */
 
+ul.introList {
+    list-style-type: none;
+    }
+    
+td.term {
+
+padding-right: 100px;
+}
+
 #mainText p {
+	font-size: 12pt;
+	font-family: 'quicksandregular', Helvetica, sans-serif;
+	line-height: 16pt;
+	text-align: left;
+	color: #000;
+}
+
+#theoryText p {
 	font-size: 12pt;
 	font-family: 'quicksandregular', Helvetica, sans-serif;
 	line-height: 16pt;
@@ -301,6 +329,17 @@ h1.subHeadings {
 }
 
 h2.theoryHeadings {
+	font-size: 14pt;
+	font-family: 'quicksandbold', Helvetica, sans-serif;
+	line-height: 18pt;
+	text-align: left;
+	color: #000;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+}
+
+h3.headings {
 	font-size: 14pt;
 	font-family: 'quicksandbold', Helvetica, sans-serif;
 	line-height: 18pt;
@@ -628,7 +667,7 @@ img.example {
   margin: 0;
   padding: 0;
 }
-/*CUSTOM CLASS TEST*/
+																			/*CUSTOM CLASS TEST*/
 #mineralMenu > ul > li.mainitem {
   width: 100%;
 }
@@ -644,7 +683,7 @@ img.example {
   font-size: 14px;
   font-weight: bold;
   padding: 15px 20px;
-  color: #7a8189;
+  color: #7a8189 ;
   text-transform: uppercase;
   -webkit-transition: color 0.25s ease-out;
   -moz-transition: color 0.25s ease-out;
@@ -706,6 +745,7 @@ img.example {
   z-index: -2;
 }
 #mineralMenu ul ul {
+  width: 84.5%;							/* TESTING HERE!!!!!!!!!!!!!! */
   position: absolute;
   left: -9999px;
   top: 70px;
@@ -720,9 +760,11 @@ img.example {
 #mineralMenu ul ul ul {
   top: 37px;
   padding-left: 5px;
+  width: 100%;
 }
 #mineralMenu ul ul li {
   position: relative;
+  width: 100%;
 }
 #mineralMenu > ul > li:hover > ul {
   left: auto;
@@ -735,7 +777,7 @@ img.example {
   opacity: 1;
 }
 #mineralMenu ul ul li a {
-  width: 130px;
+  width: 100%;							
   border-bottom: 1px solid #eee;
   padding: 10px 20px;
   font-size: 10px;
@@ -783,6 +825,7 @@ img.example {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
+
 @media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #mineralMenu {
     width: auto;

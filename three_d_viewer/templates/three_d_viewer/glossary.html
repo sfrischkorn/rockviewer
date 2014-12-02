@@ -8,7 +8,7 @@
 	{% for entry in entries %}
 		<tr>
 			<td class="term"><p>{{ entry.name }}</p></td>
-			<td><p>{{ entry.definition }}</p></td>
+			<td><p>{{ entry.definition|safe }}</p></td>
 		</tr>
 	{% endfor %}
 	</table>

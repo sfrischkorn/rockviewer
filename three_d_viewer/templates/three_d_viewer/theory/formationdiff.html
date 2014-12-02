@@ -1,0 +1,30 @@
+{% extends base_template %}
+{% load static %}
+
+{% block content %}
+    <div id="pushDownTwo"></div>
+    	<div id="mainText">
+        <h1 class="subHeadings">Theory</h1>
+        <h2 class="theoryHeadings" id="formationdiff">Formation and differentiation of Earth</h2>
+        <p>
+        Earth, like the Sun and the other planets of our Solar System formed around 4.6 billion years ago from part of a giant molecular 
+        cloud - the cosmic debris of a massive supernova. Out of matter that coalesced in the center of the molecular cloud due to 
+        gravitational collapse emerged the proto-Sun and a surrounding disk of dust and gas. Attraction forces within this rotating 
+        protoplanetary disk that fed the young Sun, led to the accretion of progressively growing objects and planetesimals. 
+        Increasing mass and gravitational forces of the growing planetary bodies resulted in interactions and disturbance in their orbits, 
+        ultimately giving rise to larger collisions. Earth, as a terrestrial inner planet formed relatively close to the Sun through the 
+        accumulation of rather heavier matter, whereas the outer planets formed from gas that had been blown away in more distal 
+        regions of the solar system (solar wind). Continuous bombardment and larger impacts – including one that led to the 
+        formation of the Moon -, and the radioactive decay within the Earth heated the planet resulting in partial melting. 
+        Different melting temperatures and density contrasts led to gravitational segregation of a heavier iron core and a lighter 
+        silicate mantle. Further chemical differentiation by partial melting of the mantle led to the formation of Earth’s proto-crust. 
+        The Earth’s layering into core, mantle and crust due to this early differentiation remains an essential 
+        feature of the Earth’s structure.
+        </p>
+        <figure>
+        <a href="{% static "three_d_viewer/images/earth differentiation.png" %}"><img width=600 height=350 src="{% static "three_d_viewer/images/earth differentiation.png" %}">
+        <figcaption>Differentiation of minerals within the earth</figcaption>
+        </figure>
+    <div id="pushDownThree"></div>
+    </div>
+{% endblock %}

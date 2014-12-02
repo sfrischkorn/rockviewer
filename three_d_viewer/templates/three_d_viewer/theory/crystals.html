@@ -1,0 +1,32 @@
+{% extends base_template %}
+{% load static %}
+
+{% block content %}
+    <div id="pushDownTwo"></div>
+        <div id="mainText">
+        <h1 class="subHeadings">Theory</h1>
+        <h2 class="theoryHeadings" id="classification">Crystals</h2>
+        <p>
+        <a href="{% static "three_d_viewer/images/crystal axes.png" %}"><img width="300" height="300" src="{% static "three_d_viewer/images/crystal axes.png" %}" align="right"></a>
+        An important characteristic of minerals is their crystallinity that is defined by the 3-dimensional, periodic structure of their atomic/ionic 
+        components. (Note that some substances, e.g. opal or obsidian, do not form crystals, but are amorphous. 
+        We sometimes refer to them as mineraloids)
+        <br /><br />
+        <a href="{% static "three_d_viewer/images/crystal systems.png" %}"><img height="450" width="305" src="{% static "three_d_viewer/images/crystal systems.png" %}" align="left"></a>
+        The smallest translatable unit cell of a crystal is defined by the crystal axes a, b and c and corresponding angles a, ß and γ. 
+        There are seven systems of crystal axes called the seven crystal systems.
+        There are 14 crystal lattices, called the Bravais lattices that describe different possibilities of 
+        distributing lattice points in the unit cells of the seven crystal systems. Among the seven crystal systems, 32 crystallographic 
+        point groups (or crystal classes) are distinguished based on the possible combination of symmetry operations, such as reflection, 
+        rotation, inversion and rotoinversion (? Crystal symmetry), within 3-dimensional space. Combination of the 14 Bravais lattices and the 32 point groups result in 230 space groups, when further glide plane and screw axes symmetry elements are included. The space groups describe all possibly existing crystal and 3-dimensional structures.
+        <a href="{% static "three_d_viewer/images/bravais lattices.png" %}"><img height="600" width="326" src="{% static "three_d_viewer/images/bravais lattices.png" %}" align="right"></a>
+
+        <a href="{% static "three_d_viewer/images/crystal morphology.png" %}"><img height="300" width="817" src="{% static "three_d_viewer/images/crystal morphology.png" %}" align="right"></a>
+        The crystal form (? Crystal morphology) arises from the symmetry elements that define the shape of the unit cell. Length and angle of the 
+        unit vectors describe the shape of the unit cell for each crystal system. The external shape of a particular crystal is called crystal 
+        habit (? Habit) and essentially dependent on the physical-chemical framework conditions during crystal growth.
+        <a href="{% static "three_d_viewer/images/bravais lattices.png" %}"><img height="600" width="326" src="{% static "three_d_viewer/images/bravais lattices.png" %}" align="right"></a>
+        </p>
+        <div id="pushDownThree"></div>
+        </div>
+{% endblock %}

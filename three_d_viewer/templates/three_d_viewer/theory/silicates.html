@@ -1,0 +1,78 @@
+{% extends base_template %}
+{% load static %}
+
+{% block content %}
+    <div id="pushDownTwo"></div>
+    	<div id="mainText">
+        <h1 class="subHeadings">Silicates</h1>
+        <figure>
+        <img src="{% static "three_d_viewer/images/SiO4 tetraedra.png" %}">
+        <figcaption>The silica tetrahedron, [SiO<sub>4</sub>]<sup>4-</sup></figcaption>
+        </figure>
+        <br /> 
+        <table>
+            <tr><td>
+            <h2 class="theoryHeadings" id="cyclosilicates">Cyclosilicates</h2>
+            <p>
+            <img src="{% static "three_d_viewer/images/cyclosilicates.png" %}" align="right">
+            The cyclosilicates form rings of linked [SiO<sub>4</sub>]<sup>4-</sup> tedrahedra with either [Si<sub>3</sub>O<sub>9</sub>]<sup>6-</sup>, 
+            [Si<sub>4</sub>O<sub>12</sub>]<sup>8-</sup>, or [Si<sub>6</sub>O<sub>18</sub>]<sup>12-</sup> configurations. Cordierite with the 
+            chemical formula (Mg,Fe)<sub>2</sub>Al<sub>4</sub>Si<sub>5</sub>O<sub>18</sub> represents an example of the cyclosilicate group.
+            </p>
+            </tr></td>
+            <tr><td>
+            <h2 class="theoryHeadings" id="inosilicates">Inosilicates</h2>
+            <p>
+            <img src="{% static "three_d_viewer/images/inosilicates.png" %}" align="right">
+            In the inosilicates, [SiO<sub>4</sub>]<sup>4-</sup> tedrahedra are linked as chains, which in turn are linked together by cations. 
+            Single-chain inosilicates form [Si<sub>2</sub>O<sub>6</sub>]<sup>4-</sup> groups, and double-chain inosilicates 
+            form [Si<sub>4</sub>O<sub>11</sub>]<sup>6-</sup> groups. Pyroxenes, e.g. diopside with the chemical formula 
+            CaMgSi<sub>2</sub>O<sub>6</sub>, are single-chain, and amphiboles, e.g. hornblende 
+            (Ca<sub>2</sub>(Mg,Fe,Al)<sub>5</sub>(Al,Si)<sub>8</sub>O<sub>22</sub>(OH)), are double-chain inosilicates.
+            </p>
+            </tr></td>
+            <tr><td>
+            <h2 class="theoryHeadings" id="nesosilicates">Nesosilicates</h2>
+            <p>
+            <img src="{% static "three_d_viewer/images/nesosilicates.png" %}" align="right">
+            In the nesosilicate group, [SiO<sub>4</sub>]<sup>4-</sup> tedrahedra are isolated from each other and share their oxygens 
+            with octahedral groups, which contain cations, such as Mg<sup>2+</sup>, Fe<sup>2+</sup>, or Ca<sup>2+</sup>.  A common 
+            rock-forming mineral of the nesosilicate group is 
+            <a href={% url 'three_d_viewer:'|add:olivine.url olivine.id %}>olivine</a> with the chemical formula 
+            (Mg,Fe)<sub>2</sub>SiO<sub>4</sub>.
+            </p>
+            </tr></td>
+            <tr><td>
+            <h2 class="theoryHeadings" id="phyllosilicates">Phyllosilicates</h2>
+            <p>
+            <img src="{% static "three_d_viewer/images/phyllosilicates.png" %}" align="right">
+            Phyllosilicates comprise sheets of [SiO<sub>4</sub>]<sup>4-</sup> tedrahedra rings, where three of the four oxygens of 
+            each tedrahedrons are shared resulting in [Si<sub>4</sub>O<sub>10</sub>]<sup>4-</sup> groups. Biotite with the 
+            chemical formula K(Mg,Fe)<sub>3</sub>(AlSi<sub>3</sub>O<sub>10</sub>)(F,OH)<sub>2</sub> is a common rock-forming phyllosilicate.
+            </p>
+            </tr></td>
+            <tr><td>
+            <h2 class="theoryHeadings" id="sorosilicates">Sorosilicates</h2>
+            <p>
+            <img src="{% static "three_d_viewer/images/sorosilicates.png" %}" align="right">
+            Two [SiO<sub>4</sub>]<sup>4-</sup> tedrahedra are linked by a shared corner oxygen to form 
+            [Si<sub>2</sub>O<sub>7</sub>]<sup>6-</sup> groups. An example for the sorosilicate group is the mineral epidote with the 
+            chemical formula Ca<sub>2</sub>Al<sub>2</sub>(Fe<sup>3+</sup>,Al)(SiO<sub>4</sub>)(Si<sub>2</sub>O<sub>7</sub>)O(OH).
+            </p>
+            </tr></td>
+            <tr><td>
+            <h2 class="theoryHeadings" id="tectosilicates">Tectosilicates</h2>
+            <p>
+            <img src="{% static "three_d_viewer/images/tectosilicates.png" %}" align="right">            
+            Complete linkage of [SiO<sub>4</sub>]<sup>4-</sup> tedrahedra results in the 3-dimensional framework of the tectosilicates. 
+            <a href={% url 'three_d_viewer:'|add:quartz.url quartz.id %}>Quartz</a> (SiO<sub>2</sub>) and the feldspars 
+            (<a href={% url 'three_d_viewer:'|add:plag.url plag.id %}>plagioclase</a>, 
+            <a href={% url 'three_d_viewer:'|add:microcline.url microcline.id %}>microcline</a>) 
+            (e.g. anorthite, CaAl<sub>2</sub>Si<sub>2</sub>O<sub>8</sub>) are tectosilicates.
+            </p>
+            </tr></td>
+        </table>
+        <br /><br /><br /><br />
+    <div id="pushDownThree"></div>
+    </div>
+{% endblock %}
