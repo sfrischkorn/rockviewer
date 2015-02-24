@@ -42,6 +42,10 @@ class Category(CommonInfo):
     @property
     def active_samples(self):
         return self.samples.select_subclasses(Sample, Mineral).filter(active=True).order_by('name')
+        
+    @property
+    def active_101_samples(self):
+        return self.samples.select_subclasses(Sample, Mineral).filter(active=True).filter(erb101_sample=True).order_by('name')
 
     class Meta:
 	    verbose_name_plural = "Categories"
@@ -59,6 +63,7 @@ class Sample(CommonInfo):
                                on_delete=models.SET_NULL,
                                related_name="samples")
     viewed_count = models.IntegerField(default=0)
+    erb101_sample = models.BooleanField(default=False)
 
     #Use the inheritance manager for handling subclasses
     objects = InheritanceManager()
@@ -76,11 +81,11 @@ class Sample(CommonInfo):
         self.viewed_count += 1
 
         if cat.name == 'Fossils':
-            return 'three_d_viewer:fossil_detail'
+            return 'fossil_detail'
         elif cat.name == 'Rocks':
-            return 'three_d_viewer:rock_detail'
+            return 'rock_detail'
         else:
-            return 'three_d_viewer:sample_detail'
+            return 'sample_detail'
 
 
 class Mineral(Sample):
@@ -102,7 +107,7 @@ class Mineral(Sample):
     @property
     def url(self):
         self.viewed_count += 1
-        return 'three_d_viewer:mineral_detail'
+        return 'mineral_detail'
 
 
 class Question(models.Model):

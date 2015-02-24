@@ -1,0 +1,31 @@
+{% extends base_template %}
+{% load static %}
+
+{% block content %}
+    <div id="pushDownTwo"></div>
+        <div id="mainText">
+        <h1 class="subHeadings">Theory</h1>
+        <h2 class="theoryHeadings" id="classification">Classification of Minerals</h2>
+        <p>
+        The classification of minerals is based on their chemistry. The following mineral classes are based on the character of their common anions:</p>
+        <li><p><a href="{% url silicates_theory %}"><span>Silicates</span></a> (SiO<sub>4</sub><sup>4-</sup>)</p></li>
+        <li><p>Oxides (O<sup>2-</sup>)</p></li>
+        <li><p>Sulfides (S<sup>2-</sup>)</p></li>
+        <li><p>Sulfates (SO<sub>4</sub><sup>2-</sup>)</p></li>
+        <li><p>Halides (Cl<sup>-</sup>)</p></li>
+        <li><p>Fluorites (F<sup>-</sup>)</p></li>
+        <li><p>Phosphates (PO<sub>4</sub><sup>3-</sup>)</p></li>
+        <li><p>Carbonates (CO<sub>3</sub><sup>2-</sup>)</p></li>
+        <li><p>Native elements, e.g. Au.</p></li>
+        <p><br />
+        <img src="{% static "three_d_viewer/images/element abundance.png" %}" align="right" width="412" height="324">
+        The relative abundance of elements in the Earth’s crust (see <a href="{% url structure_theory %}"><span>Structure of Earth</span></a>) determines which minerals form. 
+        Oxygen is the most abundant anion in the Earth’s crust. 
+        Thus, the crust can be seen as a tight package of oxygen anions (O<sup>2-</sup>), which are bonded by larger cations, 
+        such as Si<sup>4+</sup>, Mg<sup>2+</sup>, or Al<sup>3+</sup>.
+        The way atoms are packed together depends on the cation to anion radius ratio (Rx/Rz). 
+        With oxygen as the major anion, specific coordination and coordination polyhedra can be expected for different cations.
+        </p>
+        <div id="pushDownThree"></div>
+        </div>
+{% endblock %}
