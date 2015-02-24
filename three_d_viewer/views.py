@@ -284,15 +284,25 @@ class TheoryTemplateView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(TheoryTemplateView, self).get_context_data(**kwargs)
         context['base_template'] = 'three_d_viewer/base.html'
+        context['url_extender'] = 'three_d_viewer:'
         context['olivine'] = Mineral.objects.filter(name='Olivine')[0]
         context['quartz'] = Mineral.objects.filter(name='Quartz')[0]
         context['microcline'] = Mineral.objects.filter(name='Microcline')[0]
         context['plag'] = Mineral.objects.filter(name='Plagioclase')[0]
+        context['diopside'] = Mineral.objects.filter(name='Diopside')[0]
+        context['actinolite'] = Mineral.objects.filter(name='Actinolite')[0]
         return context
  
 class ERB101TheoryTemplateView(generic.TemplateView):
     def get_context_data(self, **kwargs):
         context = super(ERB101TheoryTemplateView, self).get_context_data(**kwargs)
         context['base_template'] = 'three_d_viewer/erb101/base.html'
+        context['url_extender'] = 'three_d_viewer:erb101_'
+        context['olivine'] = Mineral.objects.filter(name='Olivine')[0]
+        context['quartz'] = Mineral.objects.filter(name='Quartz')[0]
+        context['microcline'] = Mineral.objects.filter(name='Microcline')[0]
+        context['plag'] = Mineral.objects.filter(name='Plagioclase')[0]
+        context['diopside'] = Mineral.objects.filter(name='Diopside')[0]
+        context['actinolite'] = Mineral.objects.filter(name='Actinolite')[0]
         return context
         

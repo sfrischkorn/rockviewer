@@ -7,25 +7,25 @@
         <h1 class="subHeadings">Theory</h1>
         <h2 class="theoryHeadings" id="bowensreactionseries">Bowen's Reaction Series</h2>
         <p>
-	Bowen's Reaction Series arranges the silicate minerals (? Silicate minerals) in the order that they crystallize from magma. The minerals at the 
+	Bowen's Reaction Series arranges the <a href="{% url 'three_d_viewer:theory_silicates' %}"><span>silicate minerals</span></a> in the order that they crystallize from magma. The minerals at the 
     top of the series crystallize from the melt at higher temperature than those lower down. It contains a continuous series, (right hand limb), a 
     discontinuous series (left hand limb), and the residual phases, which are listed in their relative sequence of crystallization. The discontinuous 
     series describes the sequence of minerals that crystallize as the temperature of the magma decreases. The discontinuity of each of the 
     crystallization sequences reflects the different melting/crystallization temperatures of the minerals, and the change in composition of the 
-    residual magma, as the early crystallizing phases are being fractionated from the melt. The continuous series always crystallizes plagioclase, 
+    residual magma, as the early crystallizing phases are being fractionated from the melt. The continuous series always crystallizes <a href={% url 'three_d_viewer:'|add:plag.url plag.id %}>plagioclase</a>, 
     but the composition of the plagioclase changes from more calcic (i.e. anorthite) at higher temperatures to more sodic (i.e. albite) as the 
     temperature decreases. The compositional change during mineral growth can be recorded in compositional zoning of plagioclase 
-    crystals (see ? Solid-solution series). The minerals at the bottom of Bowen’s reaction series crystallize last and are more stable, 
-    and less susceptible to weathering. Thus, Bowen's reaction series also predicts the stability of minerals (? Stability of minerals) in the 
+    crystals. The minerals at the bottom of Bowen’s reaction series crystallize last and are more stable, 
+    and less susceptible to weathering. Thus, Bowen's reaction series also predicts the stability of minerals in the 
     low pressure conditions at the Earth's surface.
 	<br /><br />
 	It should be noted that all reactions do not start crystallizing olivine/anorthite-rich plagioclase and continue through until they 
-    crystallize quartz (? Quartz). Which minerals actually form, depend on many factors, such as the chemical composition of the melt, temperature, 
-    pressure, and amount of fractional crystallization. For example, basalts form from the crystallization of olivine, pyroxene and 
+    crystallize <a href={% url url_extender|add:quartz.url quartz.id %}>quartz</a>. Which minerals actually form, depend on many factors, such as the chemical composition of the melt, temperature, 
+    pressure, and amount of fractional crystallization. For example, basalts form from the crystallization of 
+    <a href={% url url_extender|add:olivine.url olivine.id %}>olivine</a>, 
+    <a href={% url url_extenderadd:diopside.url diopside.id %}>pyroxene</a> and 
     calcic plagioclase, meaning that crystallization stopped without the series progressing. If more fractional crystallization 
-    (? Fractional crystallization) were to occur, more intermediate and felsic minerals can crystallize. Such a differentiation path is 
-    illustrated in the TAS diagram, where primitive igneous rocks (i.e. basaltic) evolve to more felsic 
-    (SiO2-rich; i.e. rhyolite) ones (? TAS diagram).
+    were to occur, more intermediate and felsic minerals can crystallize. 
             <br/>
 	<img src="{% static "three_d_viewer/images/bowen.jpg" %}" style="padding-top:20px; text-align: left;" width="600px" height="auto">
 	</p>
